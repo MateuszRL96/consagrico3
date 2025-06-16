@@ -24,7 +24,7 @@ export default function Products() {
       </section>
 
       {/* Content Section */}
-      <section className="max-w-7xl mx-auto px-4 py-24">
+      <section className="max-w-7xl mx-auto px-4 py-24 ">
         <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-[#0066b3] mb-6">Produkty wkrótce dostępne</h2>

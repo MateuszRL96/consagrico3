@@ -25,7 +25,7 @@ export default function Services() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12 bg-blue-50">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Service 1 */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">

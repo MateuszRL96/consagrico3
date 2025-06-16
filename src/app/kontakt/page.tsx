@@ -132,10 +132,10 @@ export default function Contact() {
           <div className="bg-gradient-to-r from-[#0066b3] to-[#0080e0] p-6">
             <h2 className="text-2xl font-bold text-white">Formularz kontaktowy</h2>
           </div>
-          <form onSubmit={handleSubmit} className="p-8 max-w-3xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <form onSubmit={handleSubmit} className="p-8 max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Imię i nazwisko *
                 </label>
                 <input
@@ -145,12 +145,12 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
+                  className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email *
                 </label>
                 <input
@@ -160,13 +160,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
+                  className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
                 />
               </div>
             </div>
 
-            <div className="mb-6">
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+            <div className="mb-8">
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                 Temat wiadomości *
               </label>
               <input
@@ -176,12 +176,12 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
+                className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
               />
             </div>
 
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <div className="mb-8">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                 Wiadomość *
               </label>
               <textarea
@@ -190,14 +190,14 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={6}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
+                rows={8}
+                className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0066b3] focus:border-transparent transition-all"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#0066b3] to-[#0080e0] text-white px-6 py-3 rounded-lg hover:from-[#0080e0] hover:to-[#0066b3] transition-all duration-300 font-medium"
+              className="w-full bg-gradient-to-r from-[#0066b3] to-[#0080e0] text-white px-8 py-5 rounded-lg hover:from-[#0080e0] hover:to-[#0066b3] transition-all duration-300 font-medium text-xl"
             >
               Wyślij wiadomość
             </button>
