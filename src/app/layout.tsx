@@ -14,37 +14,26 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={inter.className}>
-        <header className="fixed w-full z-50">
-          {/* Navigation */}
-          <div className="relative bg-white shadow-md mt-12">
-            <nav className="container mx-auto px-22">
-              <div className="flex items-center justify-between h-20">
-                {/* Logo container */}
-                <div className="relative" style={{ width: '200px', height: '0px' }}>
-                  <Link 
-                    href="/" 
-                    className="block absolute bg-white p-6 shadow-lg" 
-                    style={{ top: '-88px', zIndex: 1000 }}
-                  >
-                    <Image
-                      src="/consagricologo.png"
-                      alt="Consagrico Logo"
-                      width={200}
-                      height={200}
-                      className="rounded-lg"
-                      priority
-                    />
-                  </Link>
-                </div>
-                
-                {/* Navigation items */}
-                <Navigation />
-              </div>
-            </nav>
+        <header className="fixed top-0 left-0 right-0 z-[1000] bg-[#F7F6FB] shadow-md">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex items-center justify-between">
+              <Link href="/" className="flex items-center gap-6 md:gap-8">
+                <Image
+                  src="/ConsagricoLogo.png"
+                  alt="Consagrico Logo"
+                  width={360}
+                  height={120}
+                  className="h-20 md:h-24 w-auto"
+                  quality={100}
+                  sizes="(max-width: 768px) 180px, 360px"
+                  priority
+                />
+              </Link>
+              <Navigation />
+            </div>
           </div>
         </header>
         {/* Spacer to prevent content from hiding under fixed header */}
-        <div className="h-32"></div>
         <main className="min-h-screen">
           {children}
         </main>
@@ -89,3 +78,4 @@ export default function RootLayout({
     </html>
   );
 }
+

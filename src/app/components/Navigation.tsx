@@ -11,14 +11,14 @@ export default function Navigation() {
   };
 
   return (
-    <ul className="flex space-x-12 text-lg ml-auto">
+    <ul className="flex items-center space-x-14 text-2xl">
       <li>
         <Link 
           href="/onas" 
           className={`font-medium uppercase transition-colors ${
             isActive('/onas') 
-              ? 'text-[#3399ff] hover:text-[#1a8cff]' 
-              : 'text-[#003366] hover:text-[#004d99]'
+              ? 'text-[#2dbd6e] hover:text-[#34c57a]' 
+              : 'text-[#003366] hover:text-[#2dbd6e]'
           }`}
         >
           O Nas
@@ -29,8 +29,8 @@ export default function Navigation() {
           href="/produkty" 
           className={`font-medium uppercase transition-colors ${
             isActive('/produkty') 
-              ? 'text-[#3399ff] hover:text-[#1a8cff]' 
-              : 'text-[#003366] hover:text-[#004d99]'
+              ? 'text-[#2dbd6e] hover:text-[#34c57a]' 
+              : 'text-[#003366] hover:text-[#2dbd6e]'
           }`}
         >
           Produkty
@@ -41,8 +41,8 @@ export default function Navigation() {
           href="/uslugi" 
           className={`font-medium uppercase transition-colors ${
             isActive('/uslugi') 
-              ? 'text-[#3399ff] hover:text-[#1a8cff]' 
-              : 'text-[#003366] hover:text-[#004d99]'
+              ? 'text-[#2dbd6e] hover:text-[#34c57a]' 
+              : 'text-[#003366] hover:text-[#2dbd6e]'
           }`}
         >
           Usługi
@@ -53,8 +53,8 @@ export default function Navigation() {
           href="/kontakt" 
           className={`font-medium uppercase transition-colors ${
             isActive('/kontakt') 
-              ? 'text-[#3399ff] hover:text-[#1a8cff]' 
-              : 'text-[#003366] hover:text-[#004d99]'
+              ? 'text-[#2dbd6e] hover:text-[#34c57a]' 
+              : 'text-[#003366] hover:text-[#2dbd6e]'
           }`}
         >
           Kontakt

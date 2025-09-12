@@ -9,7 +9,7 @@ export default function Documents() {
       <section className="relative h-[400px] -mt-40">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/lab1 (1).jpg"
+            src="/lab1 (4).jpg"
             alt="Laboratorium Consagrico"
             fill
             className="object-cover"

@@ -43,8 +43,8 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[400px] -mt-32 bg-blue-50">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[400px] bg-blue-50">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
             src="/lab1 (1).jpg"
             alt="Laboratorium Consagrico"
@@ -53,7 +53,7 @@ export default function AboutUs() {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-[#0066b3]/80 z-10"></div>
+        <div className="absolute inset-0 bg-[#0066b3]/80 z-10 pointer-events-none"></div>
         <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white">
           <div>
             <h1 className="text-5xl font-bold mb-6">O Nas</h1>
@@ -119,7 +119,7 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Nasze Wartości</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div key={value.title} className="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2">
                 <div className="text-4xl mb-4">{value.icon}</div>
                 <h3 className="text-xl font-bold text-[#0066b3] mb-2">{value.title}</h3>

@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <section className="relative h-[400px] -mt-40">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/lab1 (1).jpg"
+            src="/lab1 (4).jpg"
             alt="Laboratorium Consagrico"
             fill
             className="object-cover"
@@ -36,13 +36,13 @@ export default function PrivacyPolicy() {
 
             <h2 className="text-2xl font-bold text-[#0066b3] mb-4">Administrator danych osobowych</h2>
             <p className="text-gray-700 mb-8">
-              Administratorem Twoich danych osobowych przetwarzanych zgodnie z niniejszą Polityką Prywatności jest Consbridge Chemicals spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie przy ul. Zabłocie 23/24, 30-701 Kraków, wpisana do rejestru przedsiębiorców przez Sąd Rejonowy dla Krakowa-Śródmieścia w Krakowie, XI Wydział Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS 0000864949, NIP: 6793206661 (dalej: „Administrator" lub „CC").
+              Administratorem Twoich danych osobowych przetwarzanych zgodnie z niniejszą Polityką Prywatności jest Consbridge Chemicals spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie przy ul. Zabłocie 23/24, 30-701 Kraków, wpisana do rejestru przedsiębiorców przez Sąd Rejonowy dla Krakowa-Śródmieścia w Krakowie, XI Wydział Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS 0000864949, NIP: 6793206661 (dalej: &quot;Administrator&quot; lub &quot;CC&quot;).
             </p>
 
             <h2 className="text-2xl font-bold text-[#0066b3] mb-4">Okoliczności przetwarzania danych osobowych</h2>
             <p className="text-gray-700 mb-4">Twoje dane osobowe są przetwarzane w następujących sytuacjach:</p>
             <ul className="list-disc list-inside text-gray-700 mb-8">
-              <li>odwiedzasz stronę www.consbridgechemicals.com lub którąkolwiek z jej podstron (dalej ww. strona oraz jej podstrony zwane są – łącznie lub osobno – „Stroną");</li>
+              <li>odwiedzasz stronę www.consbridgechemicals.com lub którąkolwiek z jej podstron (dalej ww. strona oraz jej podstrony zwane są – łącznie lub osobno – &quot;Stroną&quot;);</li>
               <li>kontaktujesz się z CC, w tym m.in. osobiście, telefonicznie, za pomocą poczty elektronicznej lub poczty tradycyjnej albo też za pomocą formularza kontaktowego na Stronie.</li>
             </ul>
 

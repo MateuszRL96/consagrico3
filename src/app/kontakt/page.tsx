@@ -32,18 +32,18 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[400px] -mt-40">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[400px]">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="/lab1 (1).jpg"
+            src="/lab1 (4).jpg"
             alt="Laboratorium Consagrico"
             fill
             className="object-cover"
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-[#0066b3]/80 z-10"></div>
-        <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white" style={{ marginTop: '160px' }}>
+        <div className="absolute inset-0 bg-[#0066b3]/80 z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white">
           <div>
             <h1 className="text-5xl font-bold mb-4">Kontakt</h1>
             <p className="text-xl opacity-90">

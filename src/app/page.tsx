@@ -54,17 +54,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[800px] -mt-40">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[800px]">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="/lab1 (1).jpg"
+            src="/laborator.jpeg"
             alt="Laboratorium Consagrico"
             fill
             className="object-cover"
+            quality={90}
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-[#0066b3]/80 z-10"></div>
+        <div className="absolute inset-0 from-[#0066b3]/80 via-[#1a75d1]/70 to-[#2dbd6e]/70 z-10 pointer-events-none"></div>
         <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white" style={{ marginTop: '160px' }}>
           <div>
             <h1 className="text-6xl font-bold mb-6">Consagrico</h1>
@@ -76,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="max-w-7xl mx-auto px-4 py-24">
+      <section className="mx-auto px-4 py-24 bg-gradient-to-b from-[#e6f2ff] via-[#e9fff2] to-white">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Nasze Branże</h2>
         <div className="space-y-24">
           {industries.map((industry, index) => (
@@ -84,7 +85,7 @@ export default function Home() {
               <div className="text-center mb-12">
                 <h3 className="text-3xl font-bold text-[#0066b3]">{industry.title}</h3>
               </div>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-3 gap-8">
                 {industry.products.map((product) => (
                   <div key={product.name} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2">
                     <div className="relative h-64">
@@ -93,6 +94,7 @@ export default function Home() {
                         alt={product.name}
                         fill
                         className="object-cover"
+                        quality={85}
                       />
                     </div>
                     <div className="p-8">
@@ -100,7 +102,7 @@ export default function Home() {
                       <p className="text-gray-600 mb-6">{product.description}</p>
                       <Link 
                         href="/kontakt" 
-                        className="inline-block bg-[#0066b3] text-white px-6 py-3 rounded-lg hover:bg-[#0080e0] transition-colors"
+                        className="inline-block bg-[#2dbd6e] text-white px-6 py-3 rounded-lg hover:bg-[#27a561] transition-colors"
                       >
                         Więcej informacji
                       </Link>
@@ -119,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-[#0066b3] py-24">
+      <section className="bg-gradient-to-r from-[#0066b3] via-[#1a75d1] to-[#2dbd6e] py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Potrzebujesz spersonalizowanego rozwiązania?
@@ -129,7 +131,7 @@ export default function Home() {
           </p>
           <Link 
             href="/kontakt" 
-            className="inline-block bg-white text-[#0066b3] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#0066b3] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 hover:text-[#2dbd6e] transition-colors"
           >
             Skontaktuj się z nami
           </Link>

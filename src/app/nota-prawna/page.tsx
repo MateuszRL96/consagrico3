@@ -46,7 +46,7 @@ export default function LegalNotice() {
 
             <h2 className="text-2xl font-bold text-[#0066b3] mb-4">Strona</h2>
             <p className="text-gray-700 mb-8">
-              Niniejszy serwis internetowy (dalej – wraz z podstronami – jako: „Strona") został przygotowany na zlecenie spółki pod firmą Consbridge Chemicals spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie (dalej jako: „Spółka").
+              Niniejszy serwis internetowy (dalej – wraz z podstronami – jako: &quot;Strona&quot;) został przygotowany na zlecenie spółki pod firmą Consbridge Chemicals spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie (dalej jako: &quot;Spółka&quot;).
             </p>
 
             <h2 className="text-2xl font-bold text-[#0066b3] mb-4">Warunki korzystania ze Strony</h2>
