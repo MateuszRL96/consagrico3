@@ -7,11 +7,13 @@ type Props = {
 };
 
 const productMeta: Record<string, { title: string; image: string }> = {
-  'olecon-84-ec': { title: 'OLECON 84 EC', image: '/karnister4.png' }
+  'olecon-84-ec': { title: 'OLECON 84 EC', image: '/karnister4-removebg.png' },
+  'ricarion-95-ec': { title: 'RICARION 95 EC', image: '/karnister4-removebg.png' },
+  'ricarion-98-ec': { title: 'RICARION 98 EC', image: '/karnister4-removebg.png' }
 };
 
 export default function ProductDetailPage({ params, searchParams }: Props) {
-  const meta = productMeta[params.slug] ?? { title: 'OLECON 84 EC', image: '/karnister4.png' };
+  const meta = productMeta[params.slug] ?? { title: 'OLECON 84 EC', image: '/karnister4-removebg.png' };
   const size = searchParams.size === '5l' ? '5 L' : searchParams.size === '1l' ? '1 L' : undefined;
 
   return (
