@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import Link from 'next/link';
+import ProductWheel from './components/ProductWheel';
 
 export default function Home() {
   const industries = [
@@ -53,6 +54,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Products Categories - Interactive Wheel */}
+      <ProductWheel />
+
       {/* Hero Section */}
       <section className="relative h-[800px]">
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -63,8 +67,8 @@ export default function Home() {
             className="object-cover"
             quality={90}
             priority
-          />
-        </div>
+                />
+              </div>
         <div className="absolute inset-0 from-[#0066b3]/80 via-[#1a75d1]/70 to-[#2dbd6e]/70 z-10 pointer-events-none"></div>
         <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white" style={{ marginTop: '160px' }}>
           <div>
@@ -84,8 +88,8 @@ export default function Home() {
             <div key={industry.title} className="relative">
               <div className="text-center mb-12">
                 <h3 className="text-3xl font-bold text-[#0066b3]">{industry.title}</h3>
-              </div>
-              <div className="grid md:grid-cols-3 gap-8">
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
                 {industry.products.map((product) => (
                   <div key={product.name} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2">
                     <div className="relative h-64">
@@ -106,16 +110,16 @@ export default function Home() {
                       >
                         Więcej informacji
                       </Link>
-                    </div>
                   </div>
+                </div>
                 ))}
               </div>
               {index < industries.length - 1 && (
                 <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-[150%]">
                   <div className="w-px h-24 bg-gray-200"></div>
-                </div>
-              )}
             </div>
+              )}
+          </div>
           ))}
         </div>
       </section>

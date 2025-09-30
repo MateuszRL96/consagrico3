@@ -11,7 +11,7 @@ export default function Navigation() {
   };
 
   return (
-    <ul className="flex items-center space-x-14 text-2xl">
+    <ul className="flex items-center space-x-7 text-lg">
       <li>
         <Link 
           href="/onas" 

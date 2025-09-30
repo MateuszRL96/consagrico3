@@ -15,17 +15,17 @@ export default function RootLayout({
     <html lang="pl">
       <body className={inter.className}>
         <header className="fixed top-0 left-0 right-0 z-[1000] bg-[#F7F6FB] shadow-md">
-          <div className="container mx-auto px-4 py-6">
+          <div className="container mx-auto px-2 py-3">
             <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-6 md:gap-8">
+              <Link href="/" className="flex items-center gap-3 md:gap-4">
                 <Image
                   src="/ConsagricoLogo.png"
                   alt="Consagrico Logo"
-                  width={360}
-                  height={120}
-                  className="h-20 md:h-24 w-auto"
+                  width={180}
+                  height={60}
+                  className="h-10 md:h-12 w-auto"
                   quality={100}
-                  sizes="(max-width: 768px) 180px, 360px"
+                  sizes="(max-width: 768px) 90px, 180px"
                   priority
                 />
               </Link>
