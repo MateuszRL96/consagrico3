@@ -141,9 +141,9 @@ export default function ProductsPage() {
             <div key={product.slug} className="w-full">
               <div className="group bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 {/* Product Image */}
-                <div className="relative h-[220px] bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0]">
+                <div className="relative h-[175px] bg-gradient-to-br from-blue-50 to-blue-100">
                   <div className="absolute inset-0 flex items-center justify-center p-4">
-                    <div className="relative w-32 h-32">
+                    <div className="relative w-56 h-56">
                       <Image
                         src={product.image}
                         alt={product.name}
@@ -153,56 +153,17 @@ export default function ProductsPage() {
                       />
                     </div>
                   </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0066b3]/90 via-[#0066b3]/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
-                    <div className="w-full p-3">
-                      <div className="grid grid-cols-3 gap-2">
-                        {/* 1L option */}
-                        <div className="text-center">
-                          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                            <div className="text-white text-sm font-bold mb-1">1L</div>
-                      <Link
-                        href={{ pathname: `/produkty/${product.slug}`, query: { size: '1l' } }}
-                              className="inline-block bg-[#2dbd6e] text-white px-2 py-1 rounded text-xs font-semibold hover:bg-[#27a561] transition-colors"
-                      >
-                              Zobacz
-                      </Link>
-                          </div>
-                        </div>
-                        {/* 5L option */}
-                        <div className="text-center">
-                          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                            <div className="text-white text-sm font-bold mb-1">5L</div>
-                      <Link
-                        href={{ pathname: `/produkty/${product.slug}`, query: { size: '5l' } }}
-                              className="inline-block bg-[#2dbd6e] text-white px-2 py-1 rounded text-xs font-semibold hover:bg-[#27a561] transition-colors"
-                      >
-                              Zobacz
-                      </Link>
-                          </div>
-                        </div>
-                        {/* 20L option */}
-                        <div className="text-center">
-                          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                            <div className="text-white text-sm font-bold mb-1">20L</div>
-                      <Link
-                        href={{ pathname: `/produkty/${product.slug}`, query: { size: '20l' } }}
-                              className="inline-block bg-[#2dbd6e] text-white px-2 py-1 rounded text-xs font-semibold hover:bg-[#27a561] transition-colors"
-                            >
-                              Zobacz
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
                 </div>
 
                 {/* Product Info */}
                 <div className="p-4">
                   <div className="text-center mb-3">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
+                    <Link 
+                      href={{ pathname: `/produkty/${product.slug}`, query: { size: '1l' } }}
+                      className="text-lg font-bold text-gray-900 mb-2 hover:text-[#0066b3] transition-colors cursor-pointer"
+                    >
+                      {product.name}
+                    </Link>
                     <p className="text-sm text-gray-600 leading-relaxed">
                       {product.description}
                     </p>
@@ -221,7 +182,7 @@ export default function ProductsPage() {
                   {/* Action Button */}
                   <div className="text-center">
                     <Link
-                      href={`/produkty/${product.slug}`}
+                      href={{ pathname: `/produkty/${product.slug}`, query: { size: '1l' } }}
                       className="inline-block bg-gradient-to-r from-[#0066b3] to-[#2dbd6e] text-white px-4 py-2 rounded-lg hover:from-[#0052a3] hover:to-[#27a561] transition-all duration-300 transform hover:scale-105 font-semibold text-sm shadow-md hover:shadow-lg"
                     >
                       Zobacz szczegóły

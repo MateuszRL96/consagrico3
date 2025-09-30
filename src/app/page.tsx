@@ -4,141 +4,157 @@ import Link from 'next/link';
 import ProductWheel from './components/ProductWheel';
 
 export default function Home() {
-  const industries = [
-    {
-      title: 'Przemysł Rolniczy',
-      products: [
-        {
-          name: 'AgroFert Plus',
-          description: 'Zaawansowany nawóz mineralny',
-          image: '/lab1 (1).jpg'
-        },
-        {
-          name: 'BioProtect',
-          description: 'Środek ochrony roślin',
-          image: '/lab1 (1).jpg'
-        }
-      ]
-    },
-    {
-      title: 'Przemysł Budowlany',
-      products: [
-        {
-          name: 'ConcreteSeal',
-          description: 'Uszczelniacz do betonu',
-          image: '/lab1 (1).jpg'
-        },
-        {
-          name: 'WallGuard',
-          description: 'Impregnat do ścian',
-          image: '/lab1 (1).jpg'
-        }
-      ]
-    },
-    {
-      title: 'Przemysł Spożywczy',
-      products: [
-        {
-          name: 'FoodSafe Clean',
-          description: 'Środek czyszczący dla przemysłu spożywczego',
-          image: '/lab1 (1).jpg'
-        },
-        {
-          name: 'SaniPure',
-          description: 'Środek dezynfekujący',
-          image: '/lab1 (1).jpg'
-        }
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Products Categories - Interactive Wheel */}
       <ProductWheel />
 
-      {/* Hero Section */}
-      <section className="relative h-[800px]">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image
-            src="/laborator.jpeg"
-            alt="Laboratorium Consagrico"
-            fill
-            className="object-cover"
-            quality={90}
-            priority
-                />
-              </div>
-        <div className="absolute inset-0 from-[#0066b3]/80 via-[#1a75d1]/70 to-[#2dbd6e]/70 z-10 pointer-events-none"></div>
-        <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white" style={{ marginTop: '160px' }}>
-          <div>
-            <h1 className="text-6xl font-bold mb-6">Consagrico</h1>
-            <p className="text-2xl opacity-90 max-w-3xl mx-auto">
-              Innowacyjne rozwiązania chemiczne dla różnych gałęzi przemysłu
+      {/* About Company Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">O naszej firmie</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Consagrico to wiodący producent i dystrybutor wysokiej jakości środków ochrony roślin
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Industries Section */}
-      <section className="mx-auto px-4 py-24 bg-gradient-to-b from-[#e6f2ff] via-[#e9fff2] to-white">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Nasze Branże</h2>
-        <div className="space-y-24">
-          {industries.map((industry, index) => (
-            <div key={industry.title} className="relative">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-[#0066b3]">{industry.title}</h3>
+          {/* Company Stats */}
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#0066b3] mb-2">15+</div>
+              <div className="text-gray-600">Lat doświadczenia</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#2dbd6e] mb-2">500+</div>
+              <div className="text-gray-600">Zadowolonych klientów</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#0066b3] mb-2">50+</div>
+              <div className="text-gray-600">Produktów w ofercie</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#2dbd6e] mb-2">24/7</div>
+              <div className="text-gray-600">Wsparcie techniczne</div>
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-                {industry.products.map((product) => (
-                  <div key={product.name} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2">
-                    <div className="relative h-64">
-                      <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                        quality={85}
-                      />
+
+          {/* Video Section */}
+          <div className="mb-16">
+            <div className="bg-gray-100 rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Zobacz naszą firmę w akcji</h3>
+              <div className="relative w-full max-w-4xl mx-auto aspect-video bg-gray-200 rounded-xl overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-[#0066b3] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M8 5v10l8-5-8-5z"/>
+                      </svg>
                     </div>
-                    <div className="p-8">
-                      <h4 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h4>
-                      <p className="text-gray-600 mb-6">{product.description}</p>
-                      <Link 
-                        href="/kontakt" 
-                        className="inline-block bg-[#2dbd6e] text-white px-6 py-3 rounded-lg hover:bg-[#27a561] transition-colors"
-                      >
-                        Więcej informacji
-                      </Link>
+                    <p className="text-gray-600">Tutaj będzie video o firmie</p>
                   </div>
                 </div>
-                ))}
               </div>
-              {index < industries.length - 1 && (
-                <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-[150%]">
-                  <div className="w-px h-24 bg-gray-200"></div>
             </div>
-              )}
           </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="bg-gradient-to-r from-[#0066b3] via-[#1a75d1] to-[#2dbd6e] py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Potrzebujesz spersonalizowanego rozwiązania?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Skontaktuj się z nami, aby omówić swoje potrzeby. Nasi eksperci pomogą dobrać odpowiednie rozwiązanie.
-          </p>
+          {/* Company Images Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="space-y-4">
+              <div className="relative h-64 rounded-xl overflow-hidden">
+                <Image
+                  src="/laborator.jpeg"
+                  alt="Nasze laboratorium"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900">Nowoczesne laboratorium</h4>
+              <p className="text-gray-600">Najnowocześniejsze urządzenia do testowania i kontroli jakości</p>
+            </div>
+            <div className="space-y-4">
+              <div className="relative h-64 rounded-xl overflow-hidden">
+                <Image
+                  src="/kombajn.jpeg"
+                  alt="Produkcja"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900">Proces produkcyjny</h4>
+              <p className="text-gray-600">Zaawansowane linie produkcyjne zapewniające najwyższą jakość</p>
+            </div>
+            <div className="space-y-4">
+              <div className="relative h-64 rounded-xl overflow-hidden">
+                <Image
+                  src="/jedenpiec (1).jpg"
+                  alt="Zespół"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900">Wykwalifikowany zespół</h4>
+              <p className="text-gray-600">Doświadczeni specjaliści z wieloletnim doświadczeniem</p>
+            </div>
+          </div>
+
+          {/* Mission & Values */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Nasza misja</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Dążymy do zapewnienia rolnikom najwyższej jakości środków ochrony roślin, 
+                które są skuteczne, bezpieczne dla środowiska i opłacalne ekonomicznie.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Nasze produkty pomagają zwiększyć plony przy jednoczesnym zachowaniu 
+                zasad zrównoważonego rolnictwa.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Nasze wartości</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-[#2dbd6e] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Jakość i niezawodność produktów</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-[#2dbd6e] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Innowacyjność i rozwój</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-[#2dbd6e] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Ochrona środowiska</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-[#2dbd6e] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Partnerstwo z klientami</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+          {/* CTA Section */}
+          <div className="bg-gradient-to-r from-[#0066b3] to-[#2dbd6e] rounded-2xl p-8 text-center text-white">
+            <h3 className="text-3xl font-bold mb-4">Gotowy na współpracę?</h3>
+            <p className="text-xl mb-8 opacity-90">
+              Skontaktuj się z nami, aby dowiedzieć się więcej o naszych produktach
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             href="/kontakt" 
-            className="inline-block bg-white text-[#0066b3] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 hover:text-[#2dbd6e] transition-colors"
-          >
-            Skontaktuj się z nami
+                className="inline-block bg-white text-[#0066b3] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
+                Skontaktuj się
+              </Link>
+              <Link 
+                href="/produkty" 
+                className="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0066b3] transition-colors"
+              >
+                Zobacz produkty
           </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

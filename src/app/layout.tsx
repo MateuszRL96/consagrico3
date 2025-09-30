@@ -17,7 +17,7 @@ export default function RootLayout({
         <header className="fixed top-0 left-0 right-0 z-[1000] bg-[#F7F6FB] shadow-md">
           <div className="container mx-auto px-2 py-3">
             <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-3 md:gap-4">
+              <Link href="/" className="flex items-center gap-3 md:gap-4" style={{ marginLeft: '50px' }}>
                 <Image
                   src="/ConsagricoLogo.png"
                   alt="Consagrico Logo"

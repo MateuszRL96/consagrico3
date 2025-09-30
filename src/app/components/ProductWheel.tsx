@@ -13,43 +13,68 @@ interface ProductCategory {
 const categories: ProductCategory[] = [
   {
     id: 'herbicydy',
-    name: 'Herbicydy',
-    color: '#03A9F4',
+    name: 'HERBICYDY',
+    color: 'transparent',
     textColor: 'white',
-    products: ['OLECON 84 EC', 'RICARION 95 EC', 'AGRILEON 96 EC', 'Herbicyd X', 'Herbicyd Y'],
-    icon: '🌱'
+    products: [
+      'AGRICON 800', 'AGRILEON 96 EC', 'AGRICON MAX', 'AGRILEUS TURBO', 'AGRIEYE',
+      'OLECON 84 EC', 'RICARION 95 EC', 'HERBICYD ALFA', 'HERBICYD BETA', 'HERBICYD GAMMA',
+      'HERBICYD DELTA', 'HERBICYD EPSILON', 'HERBICYD ZETA', 'HERBICYD ETA', 'HERBICYD THETA',
+      'HERBICYD IOTA', 'HERBICYD KAPPA', 'HERBICYD LAMBDA', 'HERBICYD MU', 'HERBICYD NU'
+    ],
+    icon: ''
   },
   {
     id: 'fungicydy',
-    name: 'Fungicydy',
-    color: '#10b981',
+    name: 'FUNGICYDY',
+    color: 'transparent',
     textColor: 'white',
-    products: ['Fungicyd A', 'Fungicyd B', 'Fungicyd C', 'Fungicyd D', 'Fungicyd E'],
-    icon: '🦠'
+    products: [
+      'FUNGICYD ALFA', 'FUNGICYD BETA', 'FUNGICYD GAMMA', 'FUNGICYD DELTA', 'FUNGICYD EPSILON',
+      'FUNGICYD ZETA', 'FUNGICYD ETA', 'FUNGICYD THETA', 'FUNGICYD IOTA', 'FUNGICYD KAPPA',
+      'FUNGICYD LAMBDA', 'FUNGICYD MU', 'FUNGICYD NU', 'FUNGICYD XI', 'FUNGICYD OMICRON',
+      'FUNGICYD PI', 'FUNGICYD RHO', 'FUNGICYD SIGMA', 'FUNGICYD TAU', 'FUNGICYD UPSILON'
+    ],
+    icon: ''
   },
   {
     id: 'insektycydy',
-    name: 'Insektycydy',
-    color: '#F59E0B',
+    name: 'INSEKTYCYDY',
+    color: 'transparent',
     textColor: 'white',
-    products: ['Insektycyd A', 'Insektycyd B', 'Insektycyd C', 'Insektycyd D', 'Insektycyd E'],
-    icon: '🐛'
+    products: [
+      'INSEKTYCYD ALFA', 'INSEKTYCYD BETA', 'INSEKTYCYD GAMMA', 'INSEKTYCYD DELTA', 'INSEKTYCYD EPSILON',
+      'INSEKTYCYD ZETA', 'INSEKTYCYD ETA', 'INSEKTYCYD THETA', 'INSEKTYCYD IOTA', 'INSEKTYCYD KAPPA',
+      'INSEKTYCYD LAMBDA', 'INSEKTYCYD MU', 'INSEKTYCYD NU', 'INSEKTYCYD XI', 'INSEKTYCYD OMICRON',
+      'INSEKTYCYD PI', 'INSEKTYCYD RHO', 'INSEKTYCYD SIGMA', 'INSEKTYCYD TAU', 'INSEKTYCYD UPSILON'
+    ],
+    icon: ''
   },
   {
     id: 'aduiwanty',
-    name: 'Adiuwanty',
-    color: '#8B5CF6',
+    name: 'ADIUWANTY',
+    color: 'transparent',
     textColor: 'white',
-    products: ['Adiuwant A', 'Adiuwant B', 'Adiuwant C', 'Adiuwant D', 'Adiuwant E'],
-    icon: '💧'
+    products: [
+      'OLECON 84 EC', 'ADIUWANT ALFA', 'ADIUWANT BETA', 'ADIUWANT GAMMA', 'ADIUWANT DELTA',
+      'ADIUWANT EPSILON', 'ADIUWANT ZETA', 'ADIUWANT ETA', 'ADIUWANT THETA', 'ADIUWANT IOTA',
+      'ADIUWANT KAPPA', 'ADIUWANT LAMBDA', 'ADIUWANT MU', 'ADIUWANT NU', 'ADIUWANT XI',
+      'ADIUWANT OMICRON', 'ADIUWANT PI', 'ADIUWANT RHO', 'ADIUWANT SIGMA', 'ADIUWANT TAU'
+    ],
+    icon: ''
   },
   {
     id: 'inne',
-    name: 'Inne',
-    color: '#F44336',
+    name: 'INNE',
+    color: 'transparent',
     textColor: 'white',
-    products: ['Nawozy', 'Stymulatory', 'Preparaty', 'Dodatki', 'Inne produkty'],
-    icon: '⚗️'
+    products: [
+      'NAWÓZ ALFA', 'NAWÓZ BETA', 'STYMULATOR GAMMA', 'STYMULATOR DELTA', 'PREPARAT EPSILON',
+      'PREPARAT ZETA', 'DODATEK ETA', 'DODATEK THETA', 'DODATEK IOTA', 'DODATEK KAPPA',
+      'DODATEK LAMBDA', 'DODATEK MU', 'DODATEK NU', 'DODATEK XI', 'DODATEK OMICRON',
+      'DODATEK PI', 'DODATEK RHO', 'DODATEK SIGMA', 'DODATEK TAU', 'DODATEK UPSILON'
+    ],
+    icon: ''
   }
 ];
 
@@ -69,33 +94,15 @@ export default function ProductWheel() {
   }, []);
 
   // Zapobiegaj hydratacji - renderuj tylko po stronie klienta
-  if (!isClient) {
-    return (
-      <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-        <div className="w-full relative z-10">
-          <div className="text-center mb-16 px-4">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Nasze Kategorie Produktów</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Kompleksowa oferta rozwiązań chemicznych dla różnych potrzeb
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <div className="w-[650px] h-[650px] bg-gray-200 rounded-full flex items-center justify-center">
-              <p className="text-gray-500">Ładowanie...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+ 
 
   const getCategoryBackground = (categoryId: string) => {
     const backgrounds = {
-      'herbicydy': '/plant2.jpg',
-      'fungicydy': '/plant2.jpg',
-      'insektycydy': '/plant2.jpg',
-      'aduiwanty': '/przykladwygladu.jpeg',
-      'inne': '/plant2.jpg'
+      'herbicydy': '/tloetykiety/niebieski.jpeg',
+      'fungicydy': '/tloetykiety/zielony.jpeg',
+      'insektycydy': '/tloetykiety/czerowny.jpeg',
+      'aduiwanty': '/tloetykiety/zolty.jpeg',
+      'inne': '/tloetykiety/fioletowy.jpeg'
     };
     return backgrounds[categoryId as keyof typeof backgrounds] || '/plant2.jpg';
   };
@@ -119,9 +126,9 @@ export default function ProductWheel() {
 
   const getCategoryPosition = (index: number) => {
     const angle = (index * 72) - (isClient ? continuousRotation : 0); // 360/5 = 72 stopnie
-    const radius = 220;
-    const centerX = 310;
-    const centerY = 310;
+    const radius = 176; // Zmniejszony promień proporcjonalnie do nowego rozmiaru
+    const centerX = 260; // Zmniejszone centrum proporcjonalnie
+    const centerY = 260; // Zmniejszone centrum proporcjonalnie
     
     const x = centerX + radius * Math.cos((angle * Math.PI) / 180);
     const y = centerY + radius * Math.sin((angle * Math.PI) / 180);
@@ -143,24 +150,18 @@ export default function ProductWheel() {
       </div>
       
       <div className="w-full relative z-10">
-        <div className="text-center mb-16 px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">Nasze Kategorie Produktów</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Kompleksowa oferta rozwiązań chemicznych dla różnych potrzeb
-          </p>
-        </div>
-
+        
         {/* Wheel Container */}
-        <div className="flex flex-col lg:flex-row items-center ml-50 min-h-[800px] py-20 pr-20">
+        <div className="flex flex-col lg:flex-row items-center ml-50 min-h-[800px] py-20 pr-20 -mt-[110px]">
           
           {/* Interactive Wheel */}
-          <div className="relative w-[650px] h-[650px] mb-8 lg:mb-0 -ml-[90px] pr-[50px]">
+          <div className="relative w-[520px] h-[520px] mb-8 lg:mb-0 -ml-[140px] pr-[50px]">
 
             {/* Background Image */}
             <div 
               className="absolute inset-0 rounded-full overflow-hidden"
               style={{
-                backgroundImage: `url('/jedenpiec (1).jpg')`,
+                backgroundImage: `url('/aaa11.jpeg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
@@ -179,24 +180,23 @@ export default function ProductWheel() {
                     }`}
                     style={{
                       backgroundColor: category.color,
-                      left: `${position.x - 80 + 15}px`,
-                      top: `${position.y - 80 + 10}px`,
+                      left: `${position.x - 80 + 12 - 20 + 8}px`,
+                      top: `${position.y - 80 + 8 - 10}px`,
                       zIndex: 20
                     }}
                     onClick={() => handleCategoryClick(index)}
                   >
-                    <div className="flex flex-col items-center justify-center h-full p-6 relative overflow-hidden rounded-full">
+                    <div className="flex flex-col items-center justify-center h-full p-4 relative overflow-hidden rounded-full">
                       {/* Background Image */}
                       <div 
-                        className="absolute inset-0 bg-cover bg-center opacity-20"
+                        className="absolute inset-0 bg-cover bg-center opacity-80"
                         style={{
                           backgroundImage: `url(${getCategoryBackground(category.id)})`
                         }}
                       />
                       {/* Content */}
                       <div className="relative z-10">
-                        <div className="text-5xl mb-3">{category.icon}</div>
-                        <h3 className={`text-lg font-bold text-center ${
+                        <h3 className={`text-base font-bold text-center ${
                           category.textColor === 'white' ? 'text-white' : 'text-gray-800'
                         }`}>
                           {category.name}
@@ -211,7 +211,7 @@ export default function ProductWheel() {
           </div>
 
           {/* Active Category Details */}
-          <div className="w-full lg:w-[600px] lg:ml-8">
+          <div className="w-full lg:w-[600px] lg:ml-8" style={{ marginLeft: '120px', marginTop: '-20px' }}>
             <div className="space-y-6">
               {/* SEKCJA 1: Tytuł kategorii */}
               <div className="flex items-start space-x-4">
@@ -240,26 +240,26 @@ export default function ProductWheel() {
 
               {/* SEKCJA 3: Lista produktów z odnośnikami */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-800 mb-3 flex items-center">
+                <h4 className="text-sm font-semibold text-gray-800 mb-4 flex items-center">
                   <span className="mr-2">📦</span>
                   Nasze produkty:
                 </h4>
-                <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto">
                   {categories[activeCategory].products.map((product, index) => (
                     <div 
                       key={index}
-                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer border border-gray-200 bg-white"
+                      className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 transition-all duration-300 cursor-pointer border border-gray-200 bg-white"
                       onClick={() => {
                         // Przejście do strony produktu
                         const productSlug = product.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                         window.location.href = `/produkty/${productSlug}`;
                       }}
                     >
-                      <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-sm">
-                        {index === 0 ? '🌱' : index === 1 ? '💧' : index === 2 ? '⚗️' : index === 3 ? '🔬' : '📋'}
+                      <div className="w-6 h-6 rounded bg-gray-100 flex items-center justify-center text-xs">
+                        {index + 1}
                       </div>
-                      <span className="text-gray-700 text-sm font-medium flex-1">{product}</span>
-                      <div className="text-gray-400 text-sm">→</div>
+                      <span className="text-gray-700 text-xs font-medium flex-1 truncate">{product}</span>
+                      <div className="text-gray-400 text-xs">→</div>
                     </div>
                   ))}
                 </div>
