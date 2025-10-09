@@ -65,7 +65,7 @@ export default function WhyUsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-800 text-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 text-white relative overflow-hidden">
       {/* Dekoracyjne tło - hexagony */}
       <div className="absolute inset-0 opacity-10 z-0">
         <div className="absolute inset-0" style={{

@@ -50,6 +50,18 @@ export default function ProductCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  // Determine grid columns based on number of products
+  const getGridColumns = () => {
+    const count = products.length;
+    if (count <= 8) {
+      return 'grid-cols-2 md:grid-cols-4';
+    } else if (count <= 16) {
+      return 'grid-cols-1 md:grid-cols-2';
+    } else {
+      return 'grid-cols-2 md:grid-cols-3';
+    }
+  };
+
   useEffect(() => {
     if (!isAutoPlaying) return;
     
@@ -76,7 +88,7 @@ export default function ProductCarousel() {
   };
 
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section className="pt-32 pb-20 bg-gray-900 relative overflow-hidden">
       {/* Dekoracyjne tło - hexagony */}
       <div className="absolute inset-0 opacity-10 z-0">
         <div className="absolute inset-0" style={{
@@ -178,7 +190,7 @@ export default function ProductCarousel() {
         </div>
 
         {/* Product Cards Preview */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-12">
+        <div className={`grid ${getGridColumns()} gap-4 mt-12`}>
           {products.map((product, index) => (
             <button
               key={product.id}
@@ -190,7 +202,7 @@ export default function ProductCarousel() {
               }`}
             >
               <div className="text-4xl mb-2">{product.icon}</div>
-              <div className="font-semibold text-sm">{product.name}</div>
+              <div className="font-semibold text-xs">{product.name}</div>
             </button>
           ))}
         </div>

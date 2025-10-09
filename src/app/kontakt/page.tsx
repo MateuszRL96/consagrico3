@@ -172,7 +172,7 @@ export default function Contact() {
         </div>
 
         {/* Map Section */}
-        <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gray-700/50">
+        <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gray-700/50 mb-24">
           <div className="bg-gradient-to-r from-gray-800/80 to-gray-800/60 p-8 border-b-2 border-gray-700/50">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 bg-gradient-to-br from-[#0066b3] to-[#2dbd6e] rounded-xl flex items-center justify-center">
@@ -228,7 +228,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form - Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
           {/* Left Side - Why Contact Us */}
           <div className="space-y-8">
             <div>
@@ -273,6 +273,30 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white text-lg mb-1">Indywidualna oferta</h4>
                   <p className="text-gray-300">Przygotujemy ofertę dostosowaną do Twoich potrzeb</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#2dbd6e]/10 to-transparent rounded-xl border border-gray-700/50">
+                <div className="w-12 h-12 bg-[#2dbd6e] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-lg mb-1">Konkurencyjne ceny</h4>
+                  <p className="text-gray-300">Oferujemy atrakcyjne rabaty hurtowe i promocje dla stałych klientów</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-700/50">
+                <div className="w-12 h-12 bg-[#0066b3] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-lg mb-1">Darmowa dostawa</h4>
+                  <p className="text-gray-300">Bezpłatna wysyłka przy zamówieniach powyżej określonej wartości</p>
                 </div>
               </div>
             </div>
@@ -450,7 +474,7 @@ export default function Contact() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-20">
+        <div className="mb-24">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Często zadawane pytania</h2>
             <p className="text-xl text-gray-300">Znajdź odpowiedzi na najczęściej zadawane pytania</p>
@@ -508,7 +532,7 @@ export default function Contact() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 bg-gradient-to-br from-[#0066b3] via-[#0052a3] to-[#2dbd6e] rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
+        <div className="mb-20 bg-gradient-to-br from-[#0066b3] via-[#0052a3] to-[#2dbd6e] rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>

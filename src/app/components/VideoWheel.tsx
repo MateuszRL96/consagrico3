@@ -27,10 +27,7 @@ const videoSections: VideoSection[] = [
     name: 'HERBICYDY',
     videoUrl: '/video/niebieski.mp4',
     products: [
-      'AGRICON 800', 'AGRILEON 96 EC', 'AGRICON MAX', 'AGRILEUS TURBO', 'AGRIEYE',
-      'OLECON 84 EC', 'RICARION 95 EC', 'HERBICYD ALFA', 'HERBICYD BETA', 'HERBICYD GAMMA',
-      'HERBICYD DELTA', 'HERBICYD EPSILON', 'HERBICYD ZETA', 'HERBICYD ETA', 'HERBICYD THETA',
-      'HERBICYD IOTA', 'HERBICYD KAPPA', 'HERBICYD LAMBDA', 'HERBICYD MU', 'HERBICYD NU'
+      'Produkt1'
     ],
     backgroundImage: '/tloetykiety/niebieski.jpeg',
     color: '#03A9F4'
@@ -40,10 +37,7 @@ const videoSections: VideoSection[] = [
     name: 'FUNGICYDY',
     videoUrl: '/video/zielony.mp4',
     products: [
-      'FUNGICYD ALFA', 'FUNGICYD BETA', 'FUNGICYD GAMMA', 'FUNGICYD DELTA', 'FUNGICYD EPSILON',
-      'FUNGICYD ZETA', 'FUNGICYD ETA', 'FUNGICYD THETA', 'FUNGICYD IOTA', 'FUNGICYD KAPPA',
-      'FUNGICYD LAMBDA', 'FUNGICYD MU', 'FUNGICYD NU', 'FUNGICYD XI', 'FUNGICYD OMICRON',
-      'FUNGICYD PI', 'FUNGICYD RHO', 'FUNGICYD SIGMA', 'FUNGICYD TAU', 'FUNGICYD UPSILON'
+      'Produkt2'
     ],
     backgroundImage: '/tloetykiety/zielony.jpeg',
     color: '#10b981'
@@ -53,10 +47,7 @@ const videoSections: VideoSection[] = [
     name: 'INSEKTYCYDY',
     videoUrl: '/video/czerwony.mp4',
     products: [
-      'INSEKTYCYD ALFA', 'INSEKTYCYD BETA', 'INSEKTYCYD GAMMA', 'INSEKTYCYD DELTA', 'INSEKTYCYD EPSILON',
-      'INSEKTYCYD ZETA', 'INSEKTYCYD ETA', 'INSEKTYCYD THETA', 'INSEKTYCYD IOTA', 'INSEKTYCYD KAPPA',
-      'INSEKTYCYD LAMBDA', 'INSEKTYCYD MU', 'INSEKTYCYD NU', 'INSEKTYCYD XI', 'INSEKTYCYD OMICRON',
-      'INSEKTYCYD PI', 'INSEKTYCYD RHO', 'INSEKTYCYD SIGMA', 'INSEKTYCYD TAU', 'INSEKTYCYD UPSILON'
+      'Produkt3'
     ],
     backgroundImage: '/tloetykiety/czerowny.jpeg',
     color: '#EF4444'
@@ -66,10 +57,9 @@ const videoSections: VideoSection[] = [
     name: 'ADIUWANTY',
     videoUrl: '/video/zolty.mp4',
     products: [
-      'OLECON 84 EC', 'ADIUWANT ALFA', 'ADIUWANT BETA', 'ADIUWANT GAMMA', 'ADIUWANT DELTA',
-      'ADIUWANT EPSILON', 'ADIUWANT ZETA', 'ADIUWANT ETA', 'ADIUWANT THETA', 'ADIUWANT IOTA',
-      'ADIUWANT KAPPA', 'ADIUWANT LAMBDA', 'ADIUWANT MU', 'ADIUWANT NU', 'ADIUWANT XI',
-      'ADIUWANT OMICRON', 'ADIUWANT PI', 'ADIUWANT RHO', 'ADIUWANT SIGMA', 'ADIUWANT TAU'
+      'OLECON 84 EC', 'RICARION 95 EC', 'AGRILEON 96 EC', 'AGRICON MAX', 'AGRILEUS TURBO',
+      'AGRILEUS POWER', 'Polimery silikonowe', 'Roztwór soli sodowej', 'Trójsiloksan 75%', 'Etoksylowany alkohol 90%',
+      'Estry metylowe 82,5%', 'Trisiloksan modyfikowany', 'Adiuwant do upraw rolniczych', 'Koncentrat emulsyjny', 'Adiuwant do fungicydów miedziowych'
     ],
     backgroundImage: '/tloetykiety/zolty.jpeg',
     color: '#F59E0B'
@@ -79,11 +69,7 @@ const videoSections: VideoSection[] = [
     name: 'INNE',
     videoUrl: '/video/fioletowy.mp4',
     products: [
-      'PRODUKT SPECJALNY 1', 'PRODUKT SPECJALNY 2', 'PRODUKT SPECJALNY 3', 'PRODUKT SPECJALNY 4',
-      'PRODUKT SPECJALNY 5', 'PRODUKT SPECJALNY 6', 'PRODUKT SPECJALNY 7', 'PRODUKT SPECJALNY 8',
-      'PRODUKT SPECJALNY 9', 'PRODUKT SPECJALNY 10', 'PRODUKT SPECJALNY 11', 'PRODUKT SPECJALNY 12',
-      'PRODUKT SPECJALNY 13', 'PRODUKT SPECJALNY 14', 'PRODUKT SPECJALNY 15', 'PRODUKT SPECJALNY 16',
-      'PRODUKT SPECJALNY 17', 'PRODUKT SPECJALNY 18', 'PRODUKT SPECJALNY 19', 'PRODUKT SPECJALNY 20'
+      'Produkt4'
     ],
     backgroundImage: '/tloetykiety/fioletowy.jpeg',
     color: '#9333EA'
@@ -262,91 +248,66 @@ export default function VideoWheel() {
             })}
           </div>
 
-          {/* RIGHT SIDE - Two Product Columns */}
-          <div className="flex gap-4">
-            {/* Left Column - First 9 products */}
-            <div className="w-[280px] max-h-[80vh] overflow-y-auto scrollbar-hide">
-              <div className="bg-black/70 backdrop-blur-sm rounded-2xl p-2">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+          {/* RIGHT SIDE - Products List */}
+          <div className={`${videoSections[activeSection].products.length > 8 ? 'w-[680px]' : 'w-[340px]'} max-h-[85vh] overflow-y-auto scrollbar-hide pt-10 transition-all duration-300`}>
+            <div className="bg-black/80 backdrop-blur-md rounded-3xl p-4 shadow-2xl border border-white/10">
+              {/* Header */}
+              <div className="mb-4 pb-3 border-b border-white/20">
+                <div className="flex items-center gap-2 mb-1">
                   <div 
-                    className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: videoSections[activeSection].color }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg"
+                    style={{ 
+                      backgroundColor: videoSections[activeSection].color,
+                      boxShadow: `0 4px 20px ${videoSections[activeSection].color}40`
+                    }}
                   >
                     {getIcon(videoSections[activeSection].id, 24)}
                   </div>
-                  {videoSections[activeSection].name}
-                </h3>
-                
-                <div className="space-y-2">
-                  {videoSections[activeSection].products.slice(0, 9).map((product, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-2 p-2.5 rounded-lg hover:bg-white/10 transition-all duration-200 cursor-pointer group"
-                      onClick={() => {
-                        const productSlug = product.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-                        window.location.href = `/produkty/${productSlug}`;
-                      }}
-                    >
-                      <div
-                        className="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-white font-bold flex-shrink-0"
-                        style={{
-                          backgroundColor: videoSections[activeSection].color
-                        }}
-                      >
-                        {index + 1}
-                      </div>
-                      <span className="text-white text-sm flex-1">{product}</span>
-                      <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        →
-                      </div>
-                    </div>
-                  ))}
+                  <div>
+                    <h3 className="text-xl font-bold text-white">
+                      {videoSections[activeSection].name}
+                    </h3>
+                    <p className="text-xs text-gray-400">
+                      {videoSections[activeSection].products.length} {videoSections[activeSection].products.length === 1 ? 'produkt' : 'produktów'}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Right Column - Next 9 products */}
-            <div className="w-[280px] max-h-[80vh] overflow-y-auto scrollbar-hide">
-              <div className="bg-black/70 backdrop-blur-sm rounded-2xl p-2">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <div 
-                    className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: videoSections[activeSection].color }}
+              
+              {/* Products Grid */}
+              <div className={`${videoSections[activeSection].products.length > 8 ? 'grid grid-cols-2 gap-2' : 'space-y-2'}`}>
+                {videoSections[activeSection].products.map((product, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center space-x-2 p-2 rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer group border border-transparent hover:border-white/20"
+                    onClick={() => {
+                      const productSlug = product.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                      window.location.href = `/produkty/${productSlug}`;
+                    }}
                   >
-                    {getIcon(videoSections[activeSection].id, 24)}
-                  </div>
-                  {videoSections[activeSection].name}
-                </h3>
-                
-                <div className="space-y-2">
-                  {videoSections[activeSection].products.slice(9, 18).map((product, index) => (
                     <div
-                      key={index}
-                      className="flex items-center space-x-2 p-2.5 rounded-lg hover:bg-white/10 transition-all duration-200 cursor-pointer group"
-                      onClick={() => {
-                        const productSlug = product.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-                        window.location.href = `/produkty/${productSlug}`;
+                      className="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-white font-bold flex-shrink-0 shadow-md"
+                      style={{
+                        backgroundColor: videoSections[activeSection].color
                       }}
                     >
-                      <div
-                        className="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-white font-bold flex-shrink-0"
-                        style={{
-                          backgroundColor: videoSections[activeSection].color
-                        }}
-                      >
-                        {index + 10}
-                      </div>
-                      <span className="text-white text-sm flex-1">{product}</span>
-                      <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        →
-                      </div>
+                      {index + 1}
                     </div>
-                  ))}
-                </div>
+                    <span className="text-white text-xs flex-1 font-medium">{product}</span>
+                    <div 
+                      className="text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1"
+                      style={{ color: videoSections[activeSection].color }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                      </svg>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
+  )}

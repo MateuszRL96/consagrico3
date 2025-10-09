@@ -1,0 +1,16 @@
+Tutaj umieść 3 zdjęcia produktu:
+
+1. {nazwa-produktu}-1l.png
+2. {nazwa-produktu}-5l.png
+3. {nazwa-produktu}-20l.png
+
+Wymagania:
+- Format: PNG (z przezroczystym tłem) lub JPG
+- Rozmiar: max 2MB
+- Wymiary: zalecane 800x800px lub więcej
+- Jakość: wysoka, wyraźne zdjęcia
+
+Przykład nazw plików:
+- agricon-800-1l.png
+- agricon-800-5l.png
+- agricon-800-20l.png

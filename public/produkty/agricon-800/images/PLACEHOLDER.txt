@@ -1,0 +1,6 @@
+Umieść tutaj zdjęcia:
+- agricon-800-1l.png
+- agricon-800-5l.png
+- agricon-800-20l.png
+
+Na razie używane są tymczasowe zdjęcia z /produkty/ricarion*.png

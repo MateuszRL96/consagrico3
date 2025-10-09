@@ -10,20 +10,6 @@ type Props = {
 };
 
 const productMeta: Record<string, { title: string; image: string; image1L: string; image5L: string; image20L: string }> = {
-  'agricon-800': {
-    title: 'AGRICON 800',
-    image: '/produkty/ricarion1l.png',
-    image1L: '/produkty/ricarion1l.png',
-    image5L: '/produkty/ricarion5l.png',
-    image20L: '/produkty/ricarion20l.png'
-  },
-  'agrieye': {
-    title: 'AGRIEYE',
-    image: '/produkty/ricarion1l.png',
-    image1L: '/produkty/ricarion1l.png',
-    image5L: '/produkty/ricarion5l.png',
-    image20L: '/produkty/ricarion20l.png'
-  },
   'olecon-84-ec': { 
     title: 'OLECON 84 EC', 
     image: '/produkty/ricarion1l.png',
@@ -54,6 +40,104 @@ const productMeta: Record<string, { title: string; image: string; image1L: strin
   },
   'agrileus-turbo': {
     title: 'AGRILEUS TURBO',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'agrileus-power': {
+    title: 'AGRILEUS POWER',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'polimery-silikonowe': {
+    title: 'Polimery silikonowe',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'roztwr-soli-sodowej': {
+    title: 'Roztwór soli sodowej',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'trojsiloksan-75': {
+    title: 'Trójsiloksan 75%',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'etoksylowany-alkohol-90': {
+    title: 'Etoksylowany alkohol 90%',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'estry-metylowe-825': {
+    title: 'Estry metylowe 82,5%',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'trisiloksan-modyfikowany': {
+    title: 'Trisiloksan modyfikowany',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'adiuwant-do-upraw-rolniczych': {
+    title: 'Adiuwant do upraw rolniczych',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'koncentrat-emulsyjny': {
+    title: 'Koncentrat emulsyjny',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'adiuwant-do-fungicydow-miedziowych': {
+    title: 'Adiuwant do fungicydów miedziowych',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'produkt1': {
+    title: 'Produkt1',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'produkt2': {
+    title: 'Produkt2',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'produkt3': {
+    title: 'Produkt3',
+    image: '/produkty/ricarion1l.png',
+    image1L: '/produkty/ricarion1l.png',
+    image5L: '/produkty/ricarion5l.png',
+    image20L: '/produkty/ricarion20l.png'
+  },
+  'produkt4': {
+    title: 'Produkt4',
     image: '/produkty/ricarion1l.png',
     image1L: '/produkty/ricarion1l.png',
     image5L: '/produkty/ricarion5l.png',
@@ -109,14 +193,6 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
 
   const getPdfLinks = () => {
     const productPdfs: Record<string, { etykieta: string; karta: string }> = {
-      'agricon-800': {
-        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
-        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
-      },
-      'agrieye': {
-        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
-        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
-      },
       'olecon-84-ec': {
         etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
         karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
@@ -134,6 +210,62 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
         karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
       },
       'agrileus-turbo': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'agrileus-power': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'polimery-silikonowe': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'roztwr-soli-sodowej': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'trojsiloksan-75': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'etoksylowany-alkohol-90': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'estry-metylowe-825': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'trisiloksan-modyfikowany': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'adiuwant-do-upraw-rolniczych': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'koncentrat-emulsyjny': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'adiuwant-do-fungicydow-miedziowych': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'produkt1': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'produkt2': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'produkt3': {
+        etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
+        karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
+      },
+      'produkt4': {
         etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
         karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
       }
@@ -165,6 +297,22 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
 
       {/* Main Content */}
       <section className="max-w-6xl mx-auto px-4 py-12 pt-24 relative z-10">
+        {/* Back Button */}
+        <Link 
+          href="/produkty" 
+          className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8 group"
+        >
+          <svg 
+            className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="font-medium">Powrót do produktów</span>
+        </Link>
+
         <div className="grid lg:grid-cols-[35%_65%] gap-16">
           {/* Product Image */}
           <div className="flex flex-col items-start justify-center -ml-6">
@@ -184,19 +332,19 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
               <div className="flex gap-4 justify-center">
                 <button 
                   onClick={() => setSelectedSize('1l')} 
-                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '1l' ? 'bg-[#2dbd6e] text-white border-[#2dbd6e]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
+                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '1l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
                 >
                   1L
                 </button>
                 <button 
                   onClick={() => setSelectedSize('5l')} 
-                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '5l' ? 'bg-[#2dbd6e] text-white border-[#2dbd6e]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
+                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '5l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
                 >
                   5L
                 </button>
                 <button 
                   onClick={() => setSelectedSize('20l')} 
-                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '20l' ? 'bg-[#2dbd6e] text-white border-[#2dbd6e]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
+                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '20l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
                 >
                   20L
                 </button>

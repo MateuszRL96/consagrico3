@@ -13,51 +13,135 @@ type Product = {
 
 const products: Product[] = [
   {
-    name: 'AGRICON 800',
-    slug: 'agricon-800',
-    description: 'Zaawansowany herbicyd do zwalczania chwastów w uprawach rolnych.',
-    image: '/produkty/ricarion1l.png',
-    category: 'herbicydy'
-  },
-  {
-    name: 'AGRIEYE',
-    slug: 'agrieye',
-    description: 'Innowacyjny fungicyd do ochrony roślin przed chorobami grzybowymi.',
-    image: '/produkty/ricarion1l.png',
-    category: 'fungicydy'
-  },
-  {
     name: 'OLECON 84 EC',
     slug: 'olecon-84-ec',
-    description: 'Adiuwant olejowy poprawiający przyczepność i zwilżenie cieczy użytkowej.',
+    description: 'Olej mineralny 84EC - adiuwant olejowy poprawiający przyczepność.',
     image: '/produkty/ricarion1l.png',
     category: 'aduiwanty'
   },
   {
     name: 'RICARION 95 EC',
     slug: 'ricarion-95-ec',
-    description: 'Skuteczny insektycyd do zwalczania szkodliwych owadów w uprawach.',
+    description: 'Olej mineralny 96EC - adiuwant zwiększający skuteczność środków ochrony roślin.',
     image: '/produkty/ricarion1l.png',
-    category: 'insektycydy'
+    category: 'aduiwanty'
   },
   {
     name: 'AGRILEON 96 EC',
     slug: 'agrileon-96-ec',
-    description: 'Profesjonalny herbicyd o wysokiej skuteczności działania.',
+    description: 'Olej parafinowy - adiuwant o wysokiej czystości do zastosowań profesjonalnych.',
     image: '/produkty/ricarion1l.png',
-    category: 'herbicydy'
+    category: 'aduiwanty'
   },
   {
     name: 'AGRICON MAX',
     slug: 'agricon-max',
-    description: 'Maksymalna ochrona roślin przed chwastami i szkodnikami.',
+    description: 'Sklejacz do roślin - zwiększa przyczepność środków ochrony roślin do powierzchni liści.',
     image: '/produkty/ricarion1l.png',
-    category: 'herbicydy'
+    category: 'aduiwanty'
   },
   {
     name: 'AGRILEUS TURBO',
     slug: 'agrileus-turbo',
-    description: 'Turbo działający środek do szybkiej eliminacji problemów.',
+    description: 'Adiuwant wielofunkcyjny do agrochemikaliów - poprawia skuteczność oprysku.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'AGRILEUS POWER',
+    slug: 'agrileus-power',
+    description: 'Silvergold - adiuwant premium do profesjonalnych zastosowań w rolnictwie.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Polimery silikonowe',
+    slug: 'polimery-silikonowe',
+    description: 'Adiuwant na bazie polimerów silikonowych - redukuje napięcie powierzchniowe.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Roztwór soli sodowej',
+    slug: 'roztwr-soli-sodowej',
+    description: '10% roztwór soli sodowej kwasu alkilobenzenosulfonowego - środek zwilżający.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Trójsiloksan 75%',
+    slug: 'trojsiloksan-75',
+    description: '75% trójsiloksan - super zwilżacz do zastosowań specjalistycznych.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Etoksylowany alkohol 90%',
+    slug: 'etoksylowany-alkohol-90',
+    description: '90% etoksylowany alkohol - adiuwant emulgujący i zwilżający.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Estry metylowe 82,5%',
+    slug: 'estry-metylowe-825',
+    description: '82,5% estrów metylowych kwasów tłuszczowych - adiuwant olejowy pochodzenia roślinnego.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Trisiloksan modyfikowany',
+    slug: 'trisiloksan-modyfikowany',
+    description: 'Modyfikowany polieterem trisiloksan - zaawansowany adiuwant silikonowy.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Adiuwant do upraw rolniczych',
+    slug: 'adiuwant-do-upraw-rolniczych',
+    description: 'Adiuwant stosowany do upraw rolniczych - uniwersalne zastosowanie.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Koncentrat emulsyjny',
+    slug: 'koncentrat-emulsyjny',
+    description: 'Adiuwant wielofunkcyjny w formie koncentratu do sporządzania emulsji.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Adiuwant do fungicydów miedziowych',
+    slug: 'adiuwant-do-fungicydow-miedziowych',
+    description: 'Adiuwant stosowany do stosowania z fungicydami opartymi o miedź.',
+    image: '/produkty/ricarion1l.png',
+    category: 'aduiwanty'
+  },
+  {
+    name: 'Produkt1',
+    slug: 'produkt1',
+    description: 'Herbicyd nowej generacji do zwalczania chwastów dwuliściennych i jednoliściennych.',
+    image: '/produkty/ricarion1l.png',
+    category: 'herbicydy'
+  },
+  {
+    name: 'Produkt2',
+    slug: 'produkt2',
+    description: 'Fungicyd systemiczny do ochrony przed chorobami grzybowymi roślin uprawnych.',
+    image: '/produkty/ricarion1l.png',
+    category: 'fungicydy'
+  },
+  {
+    name: 'Produkt3',
+    slug: 'produkt3',
+    description: 'Insektycyd kontaktowo-żołądkowy do zwalczania szkodników roślin.',
+    image: '/produkty/ricarion1l.png',
+    category: 'insektycydy'
+  },
+  {
+    name: 'Produkt4',
+    slug: 'produkt4',
+    description: 'Specjalistyczny preparat do zastosowań w ochronie roślin.',
     image: '/produkty/ricarion1l.png',
     category: 'inne'
   }
@@ -124,6 +208,18 @@ export default function ProductsPage() {
     const matchesCategory = selectedCategory === 'wszystkie' || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  // Determine grid columns based on number of products
+  const getGridColumns = () => {
+    const count = filteredProducts.length;
+    if (count <= 8) {
+      return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4';
+    } else if (count <= 16) {
+      return 'grid-cols-1 md:grid-cols-2';
+    } else {
+      return 'grid-cols-1 md:grid-cols-3';
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 relative overflow-hidden">
@@ -193,8 +289,8 @@ export default function ProductsPage() {
       </section>
 
         {/* Products Section */}
-        <section className="max-w-6xl mx-auto px-4 py-12">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <section className="max-w-6xl mx-auto px-4 py-20">
+          <div className={`grid ${getGridColumns()} gap-6`}>
             {filteredProducts.map((product) => (
               <div key={product.slug} className="w-full">
                 <div className="group bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#0066b3]/20 border border-gray-700/50 hover:border-[#0066b3]/50">
@@ -225,11 +321,11 @@ export default function ProductsPage() {
                     <div className="text-center mb-3">
                       <Link 
                         href={{ pathname: `/produkty/${product.slug}`, query: { size: '1l' } }}
-                        className="text-lg font-bold text-white mb-2 hover:text-[#0066b3] transition-colors cursor-pointer block"
+                        className="text-sm font-bold text-white mb-2 hover:text-[#0066b3] transition-colors cursor-pointer block"
                       >
                         {product.name}
                       </Link>
-                      <p className="text-sm text-gray-300 leading-relaxed">
+                      <p className="text-xs text-gray-300 leading-relaxed">
                         {product.description}
                       </p>
                     </div>
@@ -239,8 +335,8 @@ export default function ProductsPage() {
                       <div className="text-center text-xs font-semibold text-gray-400 mb-2">Warianty:</div>
                       <div className="flex justify-center gap-1">
                         <span className="bg-[#0066b3]/20 text-[#0066b3] border border-[#0066b3]/30 px-2 py-1 rounded-full text-xs font-semibold">1L</span>
-                        <span className="bg-[#2dbd6e]/20 text-[#2dbd6e] border border-[#2dbd6e]/30 px-2 py-1 rounded-full text-xs font-semibold">5L</span>
-                        <span className="bg-purple-500/20 text-purple-400 border border-purple-500/30 px-2 py-1 rounded-full text-xs font-semibold">20L</span>
+                        <span className="bg-[#0066b3]/20 text-[#0066b3] border border-[#0066b3]/30 px-2 py-1 rounded-full text-xs font-semibold">5L</span>
+                        <span className="bg-[#0066b3]/20 text-[#0066b3] border border-[#0066b3]/30 px-2 py-1 rounded-full text-xs font-semibold">20L</span>
                       </div>
                     </div>
 
