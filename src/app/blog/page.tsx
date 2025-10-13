@@ -72,7 +72,7 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Animated Hexagon Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -81,45 +81,14 @@ export default function Blog() {
         }}></div>
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#0066b3]/20 to-[#2dbd6e]/20"></div>
-
       {/* Floating Shapes */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2dbd6e]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
       {/* Content */}
       <div className="relative z-10">
-        {/* Hero Section */}
-        <section className="relative py-32 mt-16 overflow-hidden">
-          <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-            <div className="inline-block mb-6">
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
-              </div>
-            </div>
-            <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">Blog Conagrico</h1>
-            <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Najnowsze informacje, porady i trendy w branży ochrony roślin
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold">
-                📚 Ekspertyzna wiedza
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold">
-                🌱 Praktyczne porady
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold">
-                💼 Aktualności branżowe
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Category Filter */}
-        <div className="max-w-7xl mx-auto px-4 mb-12">
+        <div className="max-w-7xl mx-auto px-4 mb-12 pt-32 mt-16">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
@@ -128,7 +97,7 @@ export default function Blog() {
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-[#0066b3] text-white shadow-lg shadow-[#0066b3]/50'
-                    : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border border-gray-700/50'
+                    : 'bg-white text-gray-700 hover:bg-gray-50 border-2 border-gray-200'
                 }`}
               >
                 {category}
@@ -143,7 +112,7 @@ export default function Blog() {
             {filteredPosts.map((post, index) => (
               <article 
                 key={post.id}
-                className="group bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border-2 border-gray-700/50 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2"
+                className="group bg-white backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2"
               >
                 {/* Image */}
                 <Link href={`/blog/${post.id}`}>
@@ -165,7 +134,7 @@ export default function Blog() {
                 {/* Content */}
                 <div className="p-6">
                   {/* Meta Info */}
-                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <span className="flex items-center gap-1">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -182,18 +151,18 @@ export default function Blog() {
 
                   {/* Title */}
                   <Link href={`/blog/${post.id}`}>
-                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#0066b3] transition-colors line-clamp-2">
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0066b3] transition-colors line-clamp-2">
                       {post.title}
                     </h2>
                   </Link>
 
                   {/* Excerpt */}
-                  <p className="text-gray-400 mb-6 line-clamp-3">
+                  <p className="text-gray-600 mb-6 line-clamp-3">
                     {post.excerpt}
                   </p>
 
                   {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-700/50">
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                     <Link 
                       href={`/blog/${post.id}`}
                       className="text-[#0066b3] hover:text-[#0088dd] font-semibold flex items-center gap-2 transition-colors"
@@ -224,28 +193,28 @@ export default function Blog() {
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">📝</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Brak postów w tej kategorii</h3>
-              <p className="text-gray-400">Wkrótce pojawią się nowe artykuły!</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Brak postów w tej kategorii</h3>
+              <p className="text-gray-600">Wkrótce pojawią się nowe artykuły!</p>
             </div>
           )}
         </div>
 
         {/* Newsletter Section */}
-        <section className="py-20 bg-gradient-to-r from-[#0066b3]/20 to-[#2dbd6e]/20 backdrop-blur-sm">
+        <section className="py-20 bg-gradient-to-r from-[#0066b3] to-[#2dbd6e]">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold text-white mb-6">
               Bądź na bieżąco!
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Zapisz się do newslettera i otrzymuj najnowsze artykuły prosto na swoją skrzynkę
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
               <input
                 type="email"
                 placeholder="Twój adres e-mail"
-                className="flex-1 px-6 py-4 rounded-lg bg-gray-800/60 border-2 border-gray-700/50 text-white placeholder-gray-400 focus:outline-none focus:border-[#0066b3] transition-colors"
+                className="flex-1 px-6 py-4 rounded-lg bg-white border-2 border-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-white focus:ring-2 focus:ring-white/50 transition-all"
               />
-              <button className="px-8 py-4 bg-[#0066b3] hover:bg-[#0088dd] text-white font-semibold rounded-lg transition-colors duration-300 shadow-lg shadow-[#0066b3]/50">
+              <button className="px-8 py-4 bg-white hover:bg-gray-100 text-[#0066b3] font-semibold rounded-lg transition-colors duration-300 shadow-lg">
                 Zapisz się
               </button>
             </div>

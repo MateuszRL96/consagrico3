@@ -65,7 +65,7 @@ export default function WhyUsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 text-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-white relative overflow-hidden">
       {/* Dekoracyjne tło - hexagony */}
       <div className="absolute inset-0 opacity-10 z-0">
         <div className="absolute inset-0" style={{
@@ -80,8 +80,8 @@ export default function WhyUsSection() {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4">Dlaczego Consagrico?</h2>
-          <p className="text-xl text-gray-300">
+          <h2 className="text-5xl font-bold text-gray-900 mb-4">Dlaczego Consagrico?</h2>
+          <p className="text-xl text-gray-700">
             Cztery powody, dla których warto nam zaufać
           </p>
           <div className="w-24 h-1 bg-[#0066b3] mx-auto rounded-full mt-4"></div>
@@ -99,7 +99,7 @@ export default function WhyUsSection() {
             >
               <div className="group relative h-full">
                 {/* Card */}
-                <div className="relative bg-gray-800 rounded-2xl p-8 h-full border border-gray-700 hover:border-transparent transition-all duration-300 overflow-hidden">
+                <div className="relative bg-white rounded-2xl p-8 h-full border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl">
                   {/* Gradient overlay on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   
@@ -108,13 +108,13 @@ export default function WhyUsSection() {
                     <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 group-hover:text-white/90 mb-6 transition-colors">
+                    <p className="text-gray-600 group-hover:text-white/90 mb-6 transition-colors">
                       {feature.description}
                     </p>
-                    <div className="inline-block bg-gray-700 group-hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                    <div className="inline-block bg-gray-100 group-hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 group-hover:text-white transition-colors">
                       {feature.stats}
                     </div>
                   </div>

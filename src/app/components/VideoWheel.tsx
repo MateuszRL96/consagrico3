@@ -148,18 +148,18 @@ export default function VideoWheel() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: scrollbarHideStyles }} />
-      <div className="relative h-screen overflow-hidden mt-5">
+      <div className="relative h-screen overflow-hidden mt-5 bg-white">
         {/* Hexagon Background */}
         <div className="absolute inset-0 opacity-10 z-0">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%230066b3' stroke-width='2'/%3E%3C/svg%3E")`,
             backgroundSize: '60px 60px'
           }}></div>
         </div>
 
         {/* Floating Shapes */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse z-0"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse z-0" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse z-0"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2dbd6e]/10 rounded-full blur-3xl animate-pulse z-0" style={{animationDelay: '1s'}}></div>
 
         {/* Full-screen Video Background */}
         <div className="absolute inset-0 z-0">

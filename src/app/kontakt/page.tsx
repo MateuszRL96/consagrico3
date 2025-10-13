@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Animated Hexagon Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -55,9 +55,6 @@ export default function Contact() {
           backgroundSize: '60px 60px'
         }}></div>
       </div>
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#0066b3]/20 to-[#2dbd6e]/20"></div>
 
       {/* Floating Shapes */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -69,24 +66,24 @@ export default function Contact() {
         <section className="relative py-32 mt-16 overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6">
-            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 bg-[#0066b3]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
+              <svg className="w-10 h-10 text-[#0066b3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
           </div>
-          <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">Skontaktuj się z nami</h1>
-          <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <h1 className="text-6xl font-bold text-gray-900 mb-6">Skontaktuj się z nami</h1>
+          <p className="text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Jesteśmy tutaj, aby pomóc Ci w wyborze najlepszych rozwiązań dla Twojego gospodarstwa
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold">
+            <div className="bg-[#0066b3]/10 backdrop-blur-sm px-6 py-3 rounded-full text-gray-900 font-semibold border border-[#0066b3]/20">
               ⚡ Szybka odpowiedź
             </div>
-            <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold">
+            <div className="bg-[#0066b3]/10 backdrop-blur-sm px-6 py-3 rounded-full text-gray-900 font-semibold border border-[#0066b3]/20">
               🎯 Profesjonalne doradztwo
             </div>
-            <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold">
+            <div className="bg-[#0066b3]/10 backdrop-blur-sm px-6 py-3 rounded-full text-gray-900 font-semibold border border-[#0066b3]/20">
               💼 Indywidualna oferta
             </div>
           </div>
@@ -97,7 +94,7 @@ export default function Contact() {
         {/* Contact Info Cards - Elevated */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {/* Contact Card 1 - Address */}
-          <div className="group bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-gray-700/50 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2">
+          <div className="group bg-white backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2">
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-[#0066b3] to-[#0052a3] rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,13 +102,13 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#0066b3] transition-colors">Nasza siedziba</h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                <span className="font-semibold text-white">Zabłocie 23 / 24</span><br />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#0066b3] transition-colors">Nasza siedziba</h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                <span className="font-semibold text-gray-900">Zabłocie 23 / 24</span><br />
                 30-701 Kraków<br />
                 Polska
               </p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
+              <div className="mt-6 pt-6 border-t border-gray-200">
                 <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-[#0066b3] hover:text-[#0052a3] font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
                   Zobacz na mapie
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,19 +120,19 @@ export default function Contact() {
           </div>
 
           {/* Contact Card 2 - Contact */}
-          <div className="group bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-gray-700/50 hover:border-[#2dbd6e] transition-all duration-300 hover:shadow-2xl hover:shadow-[#2dbd6e]/20 hover:-translate-y-2">
+          <div className="group bg-white backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-[#2dbd6e] transition-all duration-300 hover:shadow-2xl hover:shadow-[#2dbd6e]/20 hover:-translate-y-2">
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-[#2dbd6e] to-[#27a561] rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#2dbd6e] transition-colors">Zadzwoń do nas</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#2dbd6e] transition-colors">Zadzwoń do nas</h3>
               <div className="space-y-3">
-                <a href="tel:+48123456789" className="block text-gray-300 hover:text-[#2dbd6e] text-lg font-semibold transition-colors">
+                <a href="tel:+48123456789" className="block text-gray-600 hover:text-[#2dbd6e] text-lg font-semibold transition-colors">
                   📞 +48 123 456 789
                 </a>
-                <a href="tel:+48123456788" className="block text-gray-300 hover:text-[#2dbd6e] text-lg font-semibold transition-colors">
+                <a href="tel:+48123456788" className="block text-gray-600 hover:text-[#2dbd6e] text-lg font-semibold transition-colors">
                   📞 +48 123 456 788
                 </a>
                 <a href="mailto:kontakt@consagrico.pl" className="block text-[#2dbd6e] hover:text-[#27a561] font-semibold text-lg transition-colors mt-4">
@@ -146,25 +143,25 @@ export default function Contact() {
           </div>
 
           {/* Contact Card 3 - Hours */}
-          <div className="group bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-gray-700/50 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2">
+          <div className="group bg-white backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-gray-200 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2">
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-[#0066b3] to-[#2dbd6e] rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#0066b3] transition-colors">Godziny pracy</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#0066b3] transition-colors">Godziny pracy</h3>
               <div className="space-y-3">
-                <div className="bg-gradient-to-r from-[#0066b3]/20 to-[#2dbd6e]/20 rounded-lg p-4 border border-gray-700/50">
-                  <p className="text-white font-bold text-lg">Poniedziałek - Piątek</p>
+                <div className="bg-gradient-to-r from-[#0066b3]/20 to-[#2dbd6e]/20 rounded-lg p-4 border border-gray-200">
+                  <p className="text-gray-900 font-bold text-lg">Poniedziałek - Piątek</p>
                   <p className="text-[#0066b3] font-bold text-2xl mt-1">8:00 - 16:00</p>
                 </div>
-                <div className="bg-gray-800/80 rounded-lg p-3 border border-gray-700/50">
-                  <p className="text-gray-400 font-medium">Sobota - Niedziela</p>
+                <div className="bg-gray-100 rounded-lg p-3 border border-gray-200">
+                  <p className="text-gray-600 font-medium">Sobota - Niedziela</p>
                   <p className="text-gray-500 font-semibold">Zamknięte</p>
                 </div>
               </div>
-              <div className="mt-4 text-sm text-gray-400">
+              <div className="mt-4 text-sm text-gray-600">
                 ⚡ Odpowiadamy w ciągu 24h
               </div>
             </div>
@@ -172,8 +169,8 @@ export default function Contact() {
         </div>
 
         {/* Map Section */}
-        <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gray-700/50 mb-24">
-          <div className="bg-gradient-to-r from-gray-800/80 to-gray-800/60 p-8 border-b-2 border-gray-700/50">
+        <div className="bg-white backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gray-200 mb-24">
+          <div className="bg-gradient-to-r from-gray-50 to-white p-8 border-b-2 border-gray-200">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 bg-gradient-to-br from-[#0066b3] to-[#2dbd6e] rounded-xl flex items-center justify-center">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,8 +179,8 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-white">Znajdź nas</h2>
-                <p className="text-gray-300 mt-1">Odwiedź naszą siedzibę w Krakowie</p>
+                <h2 className="text-3xl font-bold text-gray-900">Znajdź nas</h2>
+                <p className="text-gray-600 mt-1">Odwiedź naszą siedzibę w Krakowie</p>
               </div>
             </div>
           </div>
@@ -232,47 +229,47 @@ export default function Contact() {
           {/* Left Side - Why Contact Us */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-4">Napisz do nas</h2>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Napisz do nas</h2>
+              <p className="text-xl text-gray-700 leading-relaxed">
                 Nasz zespół ekspertów jest gotowy, aby pomóc Ci w wyborze najlepszych rozwiązań dla Twojego gospodarstwa.
               </p>
             </div>
 
             {/* Benefits */}
             <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-700/50">
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-200">
                 <div className="w-12 h-12 bg-[#0066b3] rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-1">Szybka odpowiedź</h4>
-                  <p className="text-gray-300">Odpowiadamy na wszystkie zapytania w ciągu 24 godzin roboczych</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-1">Szybka odpowiedź</h4>
+                  <p className="text-gray-600">Odpowiadamy na wszystkie zapytania w ciągu 24 godzin roboczych</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#2dbd6e]/10 to-transparent rounded-xl border border-gray-700/50">
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#2dbd6e]/10 to-transparent rounded-xl border border-gray-200">
                 <div className="w-12 h-12 bg-[#2dbd6e] rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-1">Profesjonalne doradztwo</h4>
-                  <p className="text-gray-300">Nasi specjaliści pomogą dobrać optymalne produkty</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-1">Profesjonalne doradztwo</h4>
+                  <p className="text-gray-600">Nasi specjaliści pomogą dobrać optymalne produkty</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-700/50">
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-200">
                 <div className="w-12 h-12 bg-[#0066b3] rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-1">Indywidualna oferta</h4>
-                  <p className="text-gray-300">Przygotujemy ofertę dostosowaną do Twoich potrzeb</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-1">Indywidualna oferta</h4>
+                  <p className="text-gray-600">Przygotujemy ofertę dostosowaną do Twoich potrzeb</p>
                 </div>
               </div>
 
@@ -283,45 +280,45 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-1">Konkurencyjne ceny</h4>
-                  <p className="text-gray-300">Oferujemy atrakcyjne rabaty hurtowe i promocje dla stałych klientów</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-1">Konkurencyjne ceny</h4>
+                  <p className="text-gray-600">Oferujemy atrakcyjne rabaty hurtowe i promocje dla stałych klientów</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-700/50">
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#0066b3]/10 to-transparent rounded-xl border border-gray-200">
                 <div className="w-12 h-12 bg-[#0066b3] rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-1">Darmowa dostawa</h4>
-                  <p className="text-gray-300">Bezpłatna wysyłka przy zamówieniach powyżej określonej wartości</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-1">Darmowa dostawa</h4>
+                  <p className="text-gray-600">Bezpłatna wysyłka przy zamówieniach powyżej określonej wartości</p>
                 </div>
               </div>
             </div>
 
             {/* Trust Badges */}
-            <div className="bg-gradient-to-br from-gray-800/80 to-gray-800/60 rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-lg">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="text-3xl font-bold text-[#0066b3]">15+</div>
-                  <div className="text-sm text-gray-300 mt-1">Lat doświadczenia</div>
+                  <div className="text-sm text-gray-600 mt-1">Lat doświadczenia</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-[#2dbd6e]">500+</div>
-                  <div className="text-sm text-gray-300 mt-1">Zadowolonych klientów</div>
+                  <div className="text-sm text-gray-600 mt-1">Zadowolonych klientów</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-[#0066b3]">24/7</div>
-                  <div className="text-sm text-gray-300 mt-1">Wsparcie</div>
+                  <div className="text-sm text-gray-600 mt-1">Wsparcie</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gray-700/50">
+          <div className="bg-white backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gray-200">
             <div className="bg-gradient-to-r from-[#0066b3] to-[#2dbd6e] p-8 text-white">
               <h3 className="text-2xl font-bold mb-2">Formularz kontaktowy</h3>
               <p className="text-white/90">Wypełnij formularz, a skontaktujemy się z Tobą</p>
@@ -342,7 +339,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="p-8 space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-white mb-2">
+                  <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">
                     Imię i nazwisko *
                   </label>
                   <input
@@ -352,13 +349,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-600 bg-gray-700/50 text-white rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-400"
+                    className="w-full px-4 py-3 border-2 border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-500"
                     placeholder="Jan Kowalski"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-white mb-2">
+                  <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">
                     Email *
                   </label>
                   <input
@@ -368,7 +365,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-600 bg-gray-700/50 text-white rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-400"
+                    className="w-full px-4 py-3 border-2 border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-500"
                     placeholder="jan@example.com"
                   />
                 </div>
@@ -376,7 +373,7 @@ export default function Contact() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-bold text-white mb-2">
+                  <label htmlFor="phone" className="block text-sm font-bold text-gray-900 mb-2">
                     Telefon
                   </label>
                   <input
@@ -385,13 +382,13 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-600 bg-gray-700/50 text-white rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-400"
+                    className="w-full px-4 py-3 border-2 border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-500"
                     placeholder="+48 123 456 789"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-bold text-white mb-2">
+                  <label htmlFor="company" className="block text-sm font-bold text-gray-900 mb-2">
                     Nazwa gospodarstwa
                   </label>
                   <input
@@ -400,14 +397,14 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-600 bg-gray-700/50 text-white rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-400"
+                    className="w-full px-4 py-3 border-2 border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all placeholder-gray-500"
                     placeholder="Gospodarstwo Kowalskich"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-bold text-white mb-2">
+                <label htmlFor="subject" className="block text-sm font-bold text-gray-900 mb-2">
                   Temat zapytania *
                 </label>
                 <select
@@ -416,7 +413,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-600 bg-gray-700/50 text-white rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all"
                 >
                   <option value="">Wybierz temat...</option>
                   <option value="oferta">Zapytanie o ofertę</option>
@@ -428,7 +425,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-bold text-white mb-2">
+                <label htmlFor="message" className="block text-sm font-bold text-gray-900 mb-2">
                   Wiadomość *
                 </label>
                 <textarea
@@ -438,7 +435,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border-2 border-gray-600 bg-gray-700/50 text-white rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all resize-none placeholder-gray-400"
+                  className="w-full px-4 py-3 border-2 border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-[#0066b3] focus:border-[#0066b3] transition-all resize-none placeholder-gray-500"
                   placeholder="Opisz szczegółowo swoje zapytanie..."
                 ></textarea>
               </div>
@@ -466,7 +463,7 @@ export default function Contact() {
                 )}
               </button>
 
-              <p className="text-sm text-gray-400 text-center">
+              <p className="text-sm text-gray-600 text-center">
                 * Pola wymagane. Twoje dane są bezpieczne i nie będą udostępniane osobom trzecim.
               </p>
             </form>
@@ -476,55 +473,55 @@ export default function Contact() {
         {/* FAQ Section */}
         <div className="mb-24">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Często zadawane pytania</h2>
-            <p className="text-xl text-gray-300">Znajdź odpowiedzi na najczęściej zadawane pytania</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Często zadawane pytania</h2>
+            <p className="text-xl text-gray-600">Znajdź odpowiedzi na najczęściej zadawane pytania</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-700/50 hover:border-[#0066b3] transition-all duration-300 hover:shadow-[#0066b3]/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-200 hover:border-[#0066b3] transition-all duration-300 hover:shadow-[#0066b3]/20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-[#0066b3]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-[#0066b3] font-bold text-lg">?</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-2">Jak szybko otrzymam odpowiedź?</h4>
-                  <p className="text-gray-300">Odpowiadamy na wszystkie zapytania w ciągu 24 godzin roboczych. W pilnych sprawach prosimy o kontakt telefoniczny.</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-2">Jak szybko otrzymam odpowiedź?</h4>
+                  <p className="text-gray-600">Odpowiadamy na wszystkie zapytania w ciągu 24 godzin roboczych. W pilnych sprawach prosimy o kontakt telefoniczny.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-700/50 hover:border-[#2dbd6e] transition-all duration-300 hover:shadow-[#2dbd6e]/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-200 hover:border-[#2dbd6e] transition-all duration-300 hover:shadow-[#2dbd6e]/20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-[#2dbd6e]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-[#2dbd6e] font-bold text-lg">?</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-2">Czy mogę zamówić próbki produktów?</h4>
-                  <p className="text-gray-300">Tak, oferujemy próbki wybranych produktów. Skontaktuj się z nami, aby omówić szczegóły.</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-2">Czy mogę zamówić próbki produktów?</h4>
+                  <p className="text-gray-600">Tak, oferujemy próbki wybranych produktów. Skontaktuj się z nami, aby omówić szczegóły.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-700/50 hover:border-[#0066b3] transition-all duration-300 hover:shadow-[#0066b3]/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-200 hover:border-[#0066b3] transition-all duration-300 hover:shadow-[#0066b3]/20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-[#0066b3]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-[#0066b3] font-bold text-lg">?</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-2">Jakie formy płatności akceptujecie?</h4>
-                  <p className="text-gray-300">Akceptujemy przelewy bankowe, płatności online oraz dla stałych klientów oferujemy płatność odroczoną.</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-2">Jakie formy płatności akceptujecie?</h4>
+                  <p className="text-gray-600">Akceptujemy przelewy bankowe, płatności online oraz dla stałych klientów oferujemy płatność odroczoną.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-700/50 hover:border-[#2dbd6e] transition-all duration-300 hover:shadow-[#2dbd6e]/20">
+            <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-gray-200 hover:border-[#2dbd6e] transition-all duration-300 hover:shadow-[#2dbd6e]/20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-[#2dbd6e]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-[#2dbd6e] font-bold text-lg">?</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg mb-2">Czy oferujecie doradztwo techniczne?</h4>
-                  <p className="text-gray-300">Tak, nasz zespół ekspertów służy pomocą w doborze produktów i doradztwie technicznym. Usługa jest bezpłatna.</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-2">Czy oferujecie doradztwo techniczne?</h4>
+                  <p className="text-gray-600">Tak, nasz zespół ekspertów służy pomocą w doborze produktów i doradztwie technicznym. Usługa jest bezpłatna.</p>
                 </div>
               </div>
             </div>

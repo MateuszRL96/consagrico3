@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 type Props = {
-  params: { slug: string };
-  searchParams: { size?: string };
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ size?: string }>;
 };
 
 const productMeta: Record<string, { title: string; image: string; image1L: string; image5L: string; image20L: string }> = {
@@ -145,17 +145,24 @@ const productMeta: Record<string, { title: string; image: string; image1L: strin
   }
 };
 
-export default function ProductDetailPage({ params, searchParams }: Props) {
-  const [selectedSize, setSelectedSize] = useState(searchParams.size || '1l');
-  
-  const meta = productMeta[params.slug] ?? { 
-    title: 'OLECON 84 EC', 
+export default async function ProductDetailPage({ params, searchParams }: Props) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+
+  const meta = productMeta[resolvedParams.slug] ?? {
+    title: 'OLECON 84 EC',
     image: '/produkty/ricarion1l.png',
     image1L: '/produkty/ricarion1l.png',
     image5L: '/produkty/ricarion5l.png',
     image20L: '/produkty/ricarion20l.png'
   };
-  
+
+  return <ProductDetailClient initialSize={resolvedSearchParams.size || '1l'} meta={meta} slug={resolvedParams.slug} />;
+}
+
+function ProductDetailClient({ initialSize, meta, slug }: { initialSize: string; meta: any; slug: string }) {
+  const [selectedSize, setSelectedSize] = useState(initialSize);
+
   const getCurrentImage = () => {
     if (selectedSize === '1l') return meta.image1L;
     if (selectedSize === '5l') return meta.image5L;
@@ -271,15 +278,14 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
       }
     };
     
-    return productPdfs[params.slug] ?? {
+    return productPdfs[slug] ?? {
       etykieta: '/pedeefy/OLECON 84 EC_etykieta.pdf',
       karta: '/pedeefy/SDS_OLECON 84 EC.pdf'
     };
   };
 
-
-        return (
-    <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+  return (
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Animated Hexagon Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -287,9 +293,6 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
           backgroundSize: '60px 60px'
         }}></div>
       </div>
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#0066b3]/20 to-[#2dbd6e]/20"></div>
 
       {/* Floating Shapes */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -300,7 +303,7 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
         {/* Back Button */}
         <Link 
           href="/produkty" 
-          className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8 group"
+          className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors mb-8 group"
         >
           <svg 
             className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" 
@@ -328,23 +331,23 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
 
             {/* Size Selection */}
                   <div style={{ marginLeft: '20px' }}>
-              <h3 className="text-lg font-semibold text-white mb-4 text-center">Wybierz wariant:</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">Wybierz wariant:</h3>
               <div className="flex gap-4 justify-center">
                 <button 
                   onClick={() => setSelectedSize('1l')} 
-                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '1l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
+                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '1l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'}`}
                 >
                   1L
                 </button>
                 <button 
                   onClick={() => setSelectedSize('5l')} 
-                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '5l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
+                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '5l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'}`}
                 >
                   5L
                 </button>
                 <button 
                   onClick={() => setSelectedSize('20l')} 
-                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '20l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500'}`}
+                  className={`px-4 py-2 rounded-lg border-2 transition-colors ${selectedSize === '20l' ? 'bg-[#0066b3] text-white border-[#0066b3]' : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'}`}
                 >
                   20L
                 </button>
@@ -379,8 +382,8 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
           {/* Product Info */}
           <div className="space-y-6 ml-12 mt-10">
           <div>
-              <h2 className="text-xl font-bold text-white mb-3">{meta.title}</h2>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">{meta.title}</h2>
+              <p className="text-sm text-gray-700 leading-relaxed">
                 Wysokiej jakości produkt chemiczny do zastosowań profesjonalnych w rolnictwie.
               </p>
                 </div>
@@ -388,8 +391,8 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
             {/* Product Details */}
                 <div className="space-y-6">
                     <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Podstawowe informacje</h3>
-                <div className="space-y-2 text-sm text-gray-300">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Podstawowe informacje</h3>
+                <div className="space-y-2 text-sm text-gray-700">
                   <div><span className="font-medium text-[#0066b3]">UFI:</span> TH00-Y0W5-D00X-SY0S</div>
                   <div><span className="font-medium text-[#0066b3]">Wybrany wariant:</span> {getSizeText()}</div>
                   <div><span className="font-medium text-[#0066b3]">Typ produktu:</span> Adiuwant olejowy</div>
@@ -398,8 +401,8 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
               </div>
                   
                 <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Właściwości</h3>
-                <ul className="list-disc list-inside text-sm text-gray-300 space-y-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Właściwości</h3>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-2">
                   <li>Zwiększa przyczepność cieczy użytkowej</li>
                   <li>Poprawia zwilżenie powierzchni roślin</li>
                   <li>Redukuje znoszenie cieczy</li>
@@ -408,9 +411,9 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
                     </div>
                   
                 <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Bezpieczeństwo</h3>
-                <p className="text-sm text-gray-300 mb-2">Stosować rękawice ochronne i odzież ochronną. Unikać kontaktu ze skórą i oczami.</p>
-                <p className="text-xs text-gray-400">W przypadku kontaktu ze skórą przemyć dużą ilością wody. W przypadku kontaktu z oczami płukać przez 15 minut.</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Bezpieczeństwo</h3>
+                <p className="text-sm text-gray-700 mb-2">Stosować rękawice ochronne i odzież ochronną. Unikać kontaktu ze skórą i oczami.</p>
+                <p className="text-xs text-gray-600">W przypadku kontaktu ze skórą przemyć dużą ilością wody. W przypadku kontaktu z oczami płukać przez 15 minut.</p>
           </div>
               </div>
 
@@ -425,22 +428,22 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
       </section>
 
       {/* Karta Charakterystyki - Menu */}
-      <section className="bg-gray-800/50 py-16 mt-12 relative z-10">
+      <section className="bg-gray-50 py-16 mt-12 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center text-white mb-12">
+          <h2 className="text-2xl font-bold text-center text-gray-900 mb-12">
             Karta Charakterystyki - Najważniejsze Informacje
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Sekcja 1: Identyfikacja */}
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-[#0066b3]/20 transition-shadow border border-gray-700/50">
+            <div className="bg-white backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-[#0066b3]/20 transition-shadow border border-gray-200">
               <div className="text-center mb-5">
                 <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🔍</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Identyfikacja</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Identyfikacja</h3>
               </div>
-              <div className="space-y-2.5 text-sm text-gray-300">
+              <div className="space-y-2.5 text-sm text-gray-700">
                 <div><span className="font-medium text-[#0066b3]">Nazwa:</span> {meta.title}</div>
                 <div><span className="font-medium text-[#0066b3]">UFI:</span> TH00-Y0W5-D00X-SY0S</div>
                 <div><span className="font-medium text-[#0066b3]">Typ:</span> Adiuwant olejowy</div>
@@ -449,14 +452,14 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
             </div>
 
             {/* Sekcja 2: Skład */}
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-[#2dbd6e]/20 transition-shadow border border-gray-700/50">
+            <div className="bg-white backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-[#2dbd6e]/20 transition-shadow border border-gray-200">
               <div className="text-center mb-5">
                 <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🧪</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Skład</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Skład</h3>
               </div>
-              <div className="space-y-2.5 text-sm text-gray-300">
+              <div className="space-y-2.5 text-sm text-gray-700">
                 <div><span className="font-medium text-[#2dbd6e]">Substancja czynna:</span> Olej roślinny</div>
                 <div><span className="font-medium text-[#2dbd6e]">Stężenie:</span> 84%</div>
                 <div><span className="font-medium text-[#2dbd6e]">Forma:</span> Emulsja koncentrat</div>
@@ -465,50 +468,50 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
             </div>
 
             {/* Sekcja 3: Zastosowanie */}
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-shadow border border-gray-700/50">
+            <div className="bg-white backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-shadow border border-gray-200">
               <div className="text-center mb-5">
                 <div className="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🌱</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Zastosowanie</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Zastosowanie</h3>
               </div>
-              <div className="space-y-2.5 text-sm text-gray-300">
-                <div><span className="font-medium text-yellow-400">Dawka:</span> 0,5-2,0 L/ha</div>
-                <div><span className="font-medium text-yellow-400">Termin:</span> Przed opryskiem</div>
-                <div><span className="font-medium text-yellow-400">Uprawy:</span> Zboża, rzepak</div>
-                <div><span className="font-medium text-yellow-400">Mieszanie:</span> Z herbicydami</div>
+              <div className="space-y-2.5 text-sm text-gray-700">
+                <div><span className="font-medium text-yellow-600">Dawka:</span> 0,5-2,0 L/ha</div>
+                <div><span className="font-medium text-yellow-600">Termin:</span> Przed opryskiem</div>
+                <div><span className="font-medium text-yellow-600">Uprawy:</span> Zboża, rzepak</div>
+                <div><span className="font-medium text-yellow-600">Mieszanie:</span> Z herbicydami</div>
               </div>
             </div>
 
             {/* Sekcja 4: Bezpieczeństwo */}
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 transition-shadow border border-gray-700/50">
+            <div className="bg-white backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 transition-shadow border border-gray-200">
               <div className="text-center mb-5">
                 <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">⚠️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Bezpieczeństwo</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Bezpieczeństwo</h3>
               </div>
-              <div className="space-y-2.5 text-sm text-gray-300">
-                <div><span className="font-medium text-red-400">Klasa toksyczności:</span> III</div>
-                <div><span className="font-medium text-red-400">Ochrona:</span> Rękawice, okulary</div>
-                <div><span className="font-medium text-red-400">Pierwsza pomoc:</span> Przemyć wodą</div>
-                <div><span className="font-medium text-red-400">Przechowywanie:</span> Sucho, chłodno</div>
+              <div className="space-y-2.5 text-sm text-gray-700">
+                <div><span className="font-medium text-red-600">Klasa toksyczności:</span> III</div>
+                <div><span className="font-medium text-red-600">Ochrona:</span> Rękawice, okulary</div>
+                <div><span className="font-medium text-red-600">Pierwsza pomoc:</span> Przemyć wodą</div>
+                <div><span className="font-medium text-red-600">Przechowywanie:</span> Sucho, chłodno</div>
               </div>
             </div>
 
             {/* Sekcja 5: Przechowywanie */}
-            <div className="bg-gray-800/60 backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-shadow border border-gray-700/50">
+            <div className="bg-white backdrop-blur-md rounded-lg p-6 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-shadow border border-gray-200">
               <div className="text-center mb-5">
                 <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">📦</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Przechowywanie</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Przechowywanie</h3>
               </div>
-              <div className="space-y-2.5 text-sm text-gray-300">
-                <div><span className="font-medium text-purple-400">Temperatura:</span> 5-25°C</div>
-                <div><span className="font-medium text-purple-400">Wilgotność:</span> &lt; 70%</div>
-                <div><span className="font-medium text-purple-400">Termin ważności:</span> 3 lata</div>
-                <div><span className="font-medium text-purple-400">Opakowanie:</span> {getSizeText()}</div>
+              <div className="space-y-2.5 text-sm text-gray-700">
+                <div><span className="font-medium text-purple-600">Temperatura:</span> 5-25°C</div>
+                <div><span className="font-medium text-purple-600">Wilgotność:</span> &lt; 70%</div>
+                <div><span className="font-medium text-purple-600">Termin ważności:</span> 3 lata</div>
+                <div><span className="font-medium text-purple-600">Opakowanie:</span> {getSizeText()}</div>
               </div>
             </div>
           </div>
@@ -519,7 +522,7 @@ export default function ProductDetailPage({ params, searchParams }: Props) {
               href={getPdfLinks().karta}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold"
+              className="inline-flex items-center bg-[#0066b3] text-white px-6 py-3 rounded-lg hover:bg-[#0052a3] transition-colors font-semibold"
             >
               <span className="mr-2">📋</span>
               Pobierz pełną kartę charakterystyki (PDF)

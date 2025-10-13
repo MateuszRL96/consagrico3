@@ -125,9 +125,9 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Post nie został znaleziony</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Post nie został znaleziony</h1>
           <Link href="/blog" className="text-[#0066b3] hover:text-[#0088dd] font-semibold">
             Wróć do bloga
           </Link>
@@ -137,7 +137,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Animated Hexagon Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -146,8 +146,9 @@ export default function BlogPost() {
         }}></div>
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#0066b3]/20 to-[#2dbd6e]/20"></div>
+      {/* Floating Shapes */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2dbd6e]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
       {/* Content */}
       <div className="relative z-10">
@@ -155,7 +156,7 @@ export default function BlogPost() {
         <div className="max-w-4xl mx-auto px-4 pt-24">
           <Link 
             href="/blog"
-            className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-8"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -174,12 +175,12 @@ export default function BlogPost() {
           </div>
 
           {/* Title */}
-          <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
             {post.title}
           </h1>
 
           {/* Meta Info */}
-          <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-8 pb-8 border-b border-gray-700/50">
+          <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8 pb-8 border-b border-gray-200">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -201,7 +202,7 @@ export default function BlogPost() {
           </div>
 
           {/* Featured Image */}
-          <div className="relative h-96 rounded-2xl overflow-hidden mb-12 border-2 border-gray-700/50">
+          <div className="relative h-96 rounded-2xl overflow-hidden mb-12 border-2 border-gray-200">
             <Image
               src={post.image}
               alt={post.title}
@@ -265,28 +266,28 @@ export default function BlogPost() {
 
           {/* Content */}
           <div 
-            className="prose prose-invert prose-lg max-w-none
-              prose-headings:text-white prose-headings:font-bold
+            className="prose prose-lg max-w-none
+              prose-headings:text-gray-900 prose-headings:font-bold
               prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
               prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6
-              prose-ul:text-gray-300 prose-ul:my-6
+              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+              prose-ul:text-gray-700 prose-ul:my-6
               prose-li:my-2
-              prose-strong:text-white"
+              prose-strong:text-gray-900"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
           {/* Call to Action */}
-          <div className="mt-16 p-8 bg-gradient-to-r from-[#0066b3]/20 to-[#2dbd6e]/20 rounded-2xl border-2 border-gray-700/50">
+          <div className="mt-16 p-8 bg-gradient-to-r from-[#0066b3] to-[#2dbd6e] rounded-2xl">
             <h3 className="text-2xl font-bold text-white mb-4">
               Zainteresowany naszymi produktami?
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-white/90 mb-6">
               Skontaktuj się z nami, aby dowiedzieć się więcej o naszej ofercie i otrzymać profesjonalne doradztwo.
             </p>
             <Link 
               href="/kontakt"
-              className="inline-block px-8 py-4 bg-[#0066b3] hover:bg-[#0088dd] text-white font-semibold rounded-lg transition-colors duration-300 shadow-lg shadow-[#0066b3]/50"
+              className="inline-block px-8 py-4 bg-white hover:bg-gray-100 text-[#0066b3] font-semibold rounded-lg transition-colors duration-300 shadow-lg"
             >
               Skontaktuj się z nami
             </Link>

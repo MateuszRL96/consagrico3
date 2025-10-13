@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-white">
       {/* Hero Section - Video Wheel z mapą */}
       <VideoWheel />
 
@@ -17,7 +17,7 @@ export default function Home() {
       <WhyUsSection />
 
       {/* Statystyki - Nowa sekcja */}
-      <section className="py-20 bg-gray-900 relative overflow-hidden">
+      <section className="py-20 bg-white relative overflow-hidden">
         {/* Dekoracyjne tło - hexagony */}
         <div className="absolute inset-0 opacity-10 z-0">
           <div className="absolute inset-0" style={{
@@ -32,7 +32,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Zaufali Nam Liderzy Rynku
             </h2>
             <div className="w-24 h-1 bg-[#0066b3] mx-auto rounded-full"></div>
@@ -55,7 +55,7 @@ export default function Home() {
                 <div className="text-4xl md:text-5xl font-bold text-[#0066b3] mb-2 group-hover:text-[#2dbd6e] transition-colors">
                   {stat.number}
                 </div>
-                <div className="text-gray-300 font-medium">{stat.label}</div>
+                <div className="text-gray-700 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
