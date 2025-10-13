@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const regions = [
   {
@@ -58,10 +59,11 @@ export default function InteractiveProductMap() {
           <div className="relative">
             <div className="relative aspect-video bg-gray-800 rounded-2xl overflow-hidden border border-gray-700">
               {/* World map image */}
-              <img
+              <Image
                 src="/obrazy/MapChart_Map (1).png"
                 alt="Mapa świata"
-                className="w-full h-full object-contain opacity-40"
+                fill
+                className="object-contain opacity-40"
               />
 
               {/* Interactive regions */}

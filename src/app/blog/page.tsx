@@ -109,7 +109,7 @@ export default function Blog() {
         {/* Blog Posts Grid */}
         <div className="max-w-7xl mx-auto px-4 pb-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
+            {filteredPosts.map((post) => (
               <article 
                 key={post.id}
                 className="group bg-white backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200 hover:border-[#0066b3] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066b3]/20 hover:-translate-y-2"
