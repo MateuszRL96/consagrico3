@@ -38,14 +38,14 @@ export default function Navigation() {
       </li>
       <li>
         <Link 
-          href="/uslugi" 
+          href="/blog" 
           className={`font-medium uppercase transition-colors ${
-            isActive('/uslugi') 
+            isActive('/blog') 
               ? 'text-[#2dbd6e] hover:text-[#34c57a]' 
               : 'text-[#003366] hover:text-[#2dbd6e]'
           }`}
         >
-          Usługi
+          Blog
         </Link>
       </li>
       <li>

@@ -1,0 +1,5 @@
+Umieść tutaj dokumenty PDF:
+- etykieta.pdf
+- karta-charakterystyki.pdf
+
+Na razie używane są tymczasowe PDFy z /pedeefy/

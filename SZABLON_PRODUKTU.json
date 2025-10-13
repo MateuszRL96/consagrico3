@@ -1,0 +1,35 @@
+{
+  "id": "nazwa-produktu",
+  "name": "NAZWA PRODUKTU",
+  "slug": "nazwa-produktu",
+  "description": "Krótki opis produktu (1-2 zdania). Opisz główne zastosowanie i korzyści.",
+  "category": "herbicydy",
+  "ufi": "TH00-Y0W5-D00X-SY0S",
+  "type": "Herbicyd",
+  "images": {
+    "1l": "/produkty/nazwa-produktu/images/nazwa-produktu-1l.png",
+    "5l": "/produkty/nazwa-produktu/images/nazwa-produktu-5l.png",
+    "20l": "/produkty/nazwa-produktu/images/nazwa-produktu-20l.png"
+  },
+  "documents": {
+    "etykieta": "/produkty/nazwa-produktu/documents/etykieta.pdf",
+    "karta": "/produkty/nazwa-produktu/documents/karta-charakterystyki.pdf"
+  },
+  "sizes": ["1l", "5l", "20l"],
+  "properties": [
+    "Pierwsza właściwość produktu",
+    "Druga właściwość produktu",
+    "Trzecia właściwość produktu",
+    "Czwarta właściwość produktu"
+  ],
+  "safety": {
+    "short": "Krótka informacja o bezpieczeństwie (1 zdanie). Np: Stosować rękawice ochronne i odzież ochronną.",
+    "detailed": "Szczegółowa informacja o bezpieczeństwie. Np: W przypadku kontaktu ze skórą przemyć dużą ilością wody."
+  },
+  "composition": {
+    "activeSubstance": "Nazwa substancji aktywnej",
+    "concentration": "800 g/l",
+    "form": "Emulsja koncentrat",
+    "additives": "Emulgatory"
+  }
+}

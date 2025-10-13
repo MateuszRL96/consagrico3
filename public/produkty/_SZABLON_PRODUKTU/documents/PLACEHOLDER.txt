@@ -1,0 +1,9 @@
+Tutaj umieść 2 pliki PDF:
+
+1. etykieta.pdf - etykieta produktu
+2. karta-charakterystyki.pdf - karta charakterystyki (SDS/MSDS)
+
+Wymagania:
+- Format: PDF
+- Rozmiar: max 5MB na plik
+- Nazwy: dokładnie jak powyżej (małe litery, myślniki)

@@ -1,51 +1,43 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Documents() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Animated Hexagon Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%230066b3' stroke-width='1'/%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      {/* Floating Shapes */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2dbd6e]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+
+      <div className="relative z-10">
       {/* Hero Section */}
-      <section className="relative h-[400px] -mt-40">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/lab1 (4).jpg"
-            alt="Laboratorium Consagrico"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-[#0066b3]/80 z-10"></div>
-        <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white" style={{ marginTop: '160px' }}>
-          <div>
-            <h1 className="text-5xl font-bold mb-4">Dokumenty</h1>
-            <p className="text-xl opacity-90">
-              Ważne dokumenty i materiały do pobrania
-            </p>
-          </div>
+      <section className="relative py-32 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl font-bold mb-4 text-gray-900">Dokumenty</h1>
+          <p className="text-xl text-gray-700">
+            Ważne dokumenty i materiały do pobrania
+          </p>
+          <div className="w-24 h-1 bg-[#0066b3] mx-auto rounded-full mt-6"></div>
         </div>
       </section>
 
       {/* Content Section */}
       <section className="max-w-4xl mx-auto px-4 py-12">
-        {/* Breadcrumb */}
-        <nav className="flex mb-8 text-gray-600">
-          <Link href="/" className="hover:text-[#0066b3]">
-            Strona startowa
-          </Link>
-          <span className="mx-2">&gt;</span>
-          <span className="text-[#0066b3]">Dokumenty</span>
-        </nav>
-
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+        <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-8 md:p-12 border border-gray-200">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-bold text-[#0066b3] mb-6">Dokumenty do pobrania</h2>
             
             {/* Documents List */}
             <div className="grid gap-6">
               {/* Example document - this section will be populated with actual documents later */}
-              <div className="p-6 border border-gray-200 rounded-lg hover:border-[#0066b3] transition-colors">
+              <div className="p-6 border border-gray-200 rounded-lg hover:border-[#0066b3] transition-colors bg-gray-50">
                 <div className="flex items-start space-x-4">
                   <div className="bg-gray-100 p-3 rounded-lg">
                     <svg className="w-8 h-8 text-[#0066b3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +54,7 @@ export default function Documents() {
               </div>
 
               {/* Instructions for adding new documents */}
-              <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+              <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
                 <h3 className="text-lg font-semibold text-[#0066b3] mb-2">Jak dodać nowy dokument?</h3>
                 <ol className="list-decimal list-inside text-gray-700 space-y-2">
                   <li>Umieść plik PDF w folderze public/documents</li>
@@ -75,6 +67,7 @@ export default function Documents() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 } 

@@ -1,0 +1,219 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    STRUKTURA SYSTEMU PRODUKTÓW                                ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📁 conagrico3/
+│
+├── 📄 README_PRODUKTY.md                    ← START TUTAJ! Szybki przewodnik
+├── 📄 INSTRUKCJA_DODAWANIA_PRODUKTOW.md    ← Szczegółowa instrukcja
+├── 📄 NOWA_STRUKTURA_PRODUKTOW.md          ← Dokumentacja techniczna
+│
+└── 📁 public/
+    └── 📁 produkty/
+        │
+        ├── 📄 products.json                 ← ⭐ GŁÓWNY PLIK - edytujesz tutaj!
+        │
+        ├── 📁 _SZABLON_PRODUKTU/           ← 📋 Kopiuj ten folder dla nowego produktu
+        │   ├── 📁 images/
+        │   │   └── 📄 PLACEHOLDER.txt
+        │   ├── 📁 documents/
+        │   │   └── 📄 PLACEHOLDER.txt
+        │   └── 📄 README.md
+        │
+        ├── 📁 agricon-800/                 ← 📦 Przykładowy produkt
+        │   ├── 📁 images/
+        │   │   ├── 🖼️ agricon-800-1l.png
+        │   │   ├── 🖼️ agricon-800-5l.png
+        │   │   └── 🖼️ agricon-800-20l.png
+        │   ├── 📁 documents/
+        │   │   ├── 📄 etykieta.pdf
+        │   │   └── 📄 karta-charakterystyki.pdf
+        │   └── 📄 README.md
+        │
+        └── 📁 twoj-nowy-produkt/           ← 🆕 Twój nowy produkt
+            ├── 📁 images/
+            │   ├── 🖼️ twoj-nowy-produkt-1l.png
+            │   ├── 🖼️ twoj-nowy-produkt-5l.png
+            │   └── 🖼️ twoj-nowy-produkt-20l.png
+            ├── 📁 documents/
+            │   ├── 📄 etykieta.pdf
+            │   └── 📄 karta-charakterystyki.pdf
+            └── 📄 README.md (opcjonalnie)
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    JAK DODAĆ NOWY PRODUKT?                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ KROK 1: Skopiuj szablon                                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   📁 _SZABLON_PRODUKTU/  ──────►  📁 nazwa-produktu/
+                                    (zmień nazwę folderu)
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ KROK 2: Dodaj zdjęcia (3 pliki)                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   📁 nazwa-produktu/images/
+   ├── 🖼️ nazwa-produktu-1l.png    ← Butelka 1L
+   ├── 🖼️ nazwa-produktu-5l.png    ← Kanister 5L
+   └── 🖼️ nazwa-produktu-20l.png   ← Kanister 20L
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ KROK 3: Dodaj dokumenty (2 pliki)                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   📁 nazwa-produktu/documents/
+   ├── 📄 etykieta.pdf              ← Etykieta produktu
+   └── 📄 karta-charakterystyki.pdf ← Karta SDS/MSDS
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ KROK 4: Edytuj products.json                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   📄 /public/produkty/products.json
+   
+   Dodaj wpis:
+   {
+     "id": "nazwa-produktu",
+     "name": "NAZWA PRODUKTU",
+     "slug": "nazwa-produktu",
+     "description": "Opis produktu",
+     "category": "herbicydy",
+     ...
+   }
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ KROK 5: Gotowe! 🎉                                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   Odśwież stronę: http://localhost:3000/produkty
+   
+   Twój produkt powinien się pojawić na liście!
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    PRZEPŁYW DANYCH                                            ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+   📄 products.json
+        │
+        │ (wczytywane przez)
+        ▼
+   📄 /src/app/produkty/page.tsx
+        │
+        │ (wyświetla listę)
+        ▼
+   🌐 Strona /produkty
+        │
+        │ (kliknięcie w produkt)
+        ▼
+   📄 /src/app/produkty/[slug]/page.tsx
+        │
+        │ (wyświetla szczegóły)
+        ▼
+   🌐 Strona /produkty/nazwa-produktu
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    WYMAGANIA PLIKÓW                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ZDJĘCIA                                                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   Format:      PNG (z przezroczystym tłem) lub JPG
+   Rozmiar:     max 2MB na zdjęcie
+   Wymiary:     zalecane 800x800px lub więcej
+   Proporcje:   Kwadratowe (1:1)
+   Nazwy:       {slug}-1l.png, {slug}-5l.png, {slug}-20l.png
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DOKUMENTY PDF                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+   Format:      PDF
+   Rozmiar:     max 5MB na plik
+   Nazwy:       etykieta.pdf, karta-charakterystyki.pdf
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    KATEGORIE PRODUKTÓW                                        ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+   🔵 herbicydy      - Środki do zwalczania chwastów
+   🟢 fungicydy      - Środki do zwalczania chorób grzybowych
+   🔴 insektycydy    - Środki do zwalczania owadów
+   🟡 aduiwanty      - Środki wspomagające (adiuwanty)
+   🟣 inne           - Inne produkty
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    ZASADY NAZEWNICTWA                                         ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+   ✅ DOBRZE:
+      agricon-800
+      ricarion-95-ec
+      olecon-84-ec
+
+   ❌ ŹLE:
+      Agricon 800        (spacje, wielkie litery)
+      agricon_800        (podkreślniki)
+      agricoń-800        (polskie znaki)
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    CHECKLIST                                                  ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+   Przed dodaniem produktu sprawdź:
+
+   □ Folder ma poprawną nazwę (slug)
+   □ Dodane są wszystkie 3 zdjęcia (1L, 5L, 20L)
+   □ Zdjęcia mają poprawne nazwy
+   □ Dodane są oba PDFy (etykieta, karta)
+   □ PDFy mają poprawne nazwy
+   □ Produkt dodany do products.json
+   □ Wszystkie ścieżki w JSON są poprawne
+   □ Plik JSON jest poprawnie sformatowany
+   □ Kategoria jest poprawna
+   □ Wszystkie pola są wypełnione
+   □ Produkt wyświetla się na stronie /produkty
+   □ Kliknięcie w produkt otwiera stronę szczegółów
+   □ Przyciski zmiany rozmiaru działają
+   □ PDFy otwierają się poprawnie
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    CZAS I TRUDNOŚĆ                                            ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+   ⏱️  Czas potrzebny:     5-10 minut na produkt
+   ⭐ Trudność:            ⭐⭐☆☆☆ (Łatwe)
+
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    POTRZEBUJESZ POMOCY?                                       ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+   1. Przeczytaj: INSTRUKCJA_DODAWANIA_PRODUKTOW.md
+   2. Zobacz przykład: /public/produkty/agricon-800/
+   3. Sprawdź szablon: /public/produkty/_SZABLON_PRODUKTU/
+   4. Sprawdź konsolę przeglądarki (F12)
+   5. Waliduj JSON: jsonlint.com
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    🎉 POWODZENIA! 🎉
+
+═══════════════════════════════════════════════════════════════════════════════

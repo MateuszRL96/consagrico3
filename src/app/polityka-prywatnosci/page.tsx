@@ -1,34 +1,36 @@
 'use client';
-import Image from 'next/image';
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Animated Hexagon Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%230066b3' stroke-width='1'/%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      {/* Floating Shapes */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#0066b3]/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2dbd6e]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+
+      {/* Content */}
+      <div className="relative z-10">
       {/* Hero Section */}
-      <section className="relative h-[400px] -mt-40">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/lab1 (4).jpg"
-            alt="Laboratorium Consagrico"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-[#0066b3]/80 z-10"></div>
-        <div className="absolute inset-0 z-20 flex items-center justify-center text-center text-white" style={{ marginTop: '160px' }}>
-          <div>
-            <h1 className="text-5xl font-bold mb-4">Polityka Prywatności</h1>
-            <p className="text-xl opacity-90">
-              Ochrona Twoich danych osobowych jest dla nas priorytetem
-            </p>
-          </div>
+      <section className="relative py-32 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl font-bold mb-4 text-gray-900">Polityka Prywatności</h1>
+          <p className="text-xl text-gray-700">
+            Ochrona Twoich danych osobowych jest dla nas priorytetem
+          </p>
+          <div className="w-24 h-1 bg-[#0066b3] mx-auto rounded-full mt-6"></div>
         </div>
       </section>
 
       {/* Content Section */}
       <section className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+        <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-8 md:p-12 border border-gray-200">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 mb-8">
               Poniżej znajdziesz informacje na temat przetwarzania przez spółkę pod firmą Consbridge Chemicals spółka z ograniczoną odpowiedzialnością Twoich danych osobowych.
@@ -56,7 +58,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside text-gray-700 mb-8">
               <li>w oparciu o nasz prawnie uzasadniony interes jako administratora danych osobowych – w celu odpowiedzi na wiadomości kierowane do nas na nasze dane kontaktowe za pomocą poczty tradycyjnej, poczty elektronicznej lub formularza kontaktowego</li>
               <li>w oparciu o nasz prawnie uzasadniony interes w przypadku, gdy już nawiązaliśmy relację biznesową, zaś w przypadku, gdy taką relację zamierzamy nawiązać w oparciu o Twoją zgodę (tj. od czasu wyrażenia zgody przez Ciebie, przez czas nie dłuższy niż do momentu wycofania tej zgody) – w celu realizowania marketingu bezpośredniego produktów lub usług;</li>
-              <li>w związku z nałożonym na nas jako na administratora danych obowiązkiem prawidłowego zabezpieczenia danych i w oparciu o nasz prawnie uzasadniony interes jako administratora danych osobowych – w celu archiwizacji danych i wykonywania kopii zapasowych.</li>
+              <li>w związku z nałożonym na nas jako na administratora danych obowiązkiem prawidłowego zabezpieczenia danych i w oparciu o nasz prawnie uzasadniony interes jako administratora danych osobowych – w celu archivizacji danych i wykonywania kopii zapasowych.</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-[#0066b3] mb-4">Dane przetwarzane w celu kontaktu</h2>
@@ -109,7 +111,7 @@ export default function PrivacyPolicy() {
               <li>pliki cookies podmiotów (stron) trzecich.</li>
             </ul>
 
-            <div className="mt-12 p-6 bg-gray-50 rounded-xl">
+            <div className="mt-12 p-6 bg-blue-50 rounded-xl border border-blue-200">
               <h2 className="text-2xl font-bold text-[#0066b3] mb-4">Skontaktuj się z nami</h2>
               <p className="text-gray-700">
                 Jeśli masz pytania dotyczące naszej polityki prywatności, skontaktuj się z nami:
@@ -129,6 +131,7 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 } 

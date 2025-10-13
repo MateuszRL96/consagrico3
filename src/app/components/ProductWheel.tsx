@@ -82,6 +82,7 @@ export default function ProductWheel() {
   const [activeCategory, setActiveCategory] = useState(0);
   const [continuousRotation, setContinuousRotation] = useState(0);
   const [isClient, setIsClient] = useState(false);
+  const [backgroundGlow, setBackgroundGlow] = useState(false);
 
   // Upewnij się, że animacja działa tylko po stronie klienta
   useEffect(() => {
@@ -109,7 +110,7 @@ export default function ProductWheel() {
 
   const getCategoryDescription = (categoryId: string) => {
     const descriptions = {
-      'herbicydy': 'Skuteczne środki do zwalczania chwastów w uprawach rolnych. Nasze herbicydy zapewniają kompleksową ochronę przed niepożądanymi roślinami.',
+      'herbicydy': 'Skuteczne środki do zwalczania chwastów. Nasze herbicydy zapewniają ochronę przed niepożądanymi roślinami.',
       'fungicydy': 'Ochrona roślin przed chorobami grzybowymi. Nowoczesne fungicydy o wysokiej skuteczności i bezpieczeństwie stosowania.',
       'insektycydy': 'Zwalczanie szkodliwych owadów w uprawach. Skuteczne preparaty chroniące rośliny przed szkodnikami.',
       'aduiwanty': 'Substancje wspomagające zwiększające skuteczność środków ochrony roślin. Poprawiają wchłanianie i działanie preparatów.',
@@ -118,8 +119,23 @@ export default function ProductWheel() {
     return descriptions[categoryId as keyof typeof descriptions] || 'Wysokiej jakości produkty chemiczne dla Twoich potrzeb.';
   };
 
+  const getCategoryColor = (categoryId: string) => {
+    const colors = {
+      'herbicydy': '#03A9F4', // niebieski
+      'fungicydy': '#10b981', // zielony
+      'insektycydy': '#F59E0B', // żółty
+      'aduiwanty': '#F59E0B', // żółty (jak w tle etykiety)
+      'inne': '#8B5CF6' // fioletowy (jak w tle etykiety)
+    };
+    return colors[categoryId as keyof typeof colors] || '#03A9F4';
+  };
+
   const handleCategoryClick = (index: number) => {
     if (index === activeCategory) return;
+    
+    // Animacja glow
+    setBackgroundGlow(true);
+    setTimeout(() => setBackgroundGlow(false), 2000);
     
     setActiveCategory(index);
   };
@@ -141,6 +157,16 @@ export default function ProductWheel() {
 
   return (
     <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      {/* Animated Background Glow */}
+      <div 
+        className={`absolute inset-0 transition-all duration-1000 ${
+          backgroundGlow ? 'opacity-30' : 'opacity-0'
+        }`}
+        style={{
+          background: `radial-gradient(circle at center, ${getCategoryColor(categories[activeCategory].id)}20 0%, transparent 70%)`
+        }}
+      ></div>
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-green-400/20"></div>
@@ -175,14 +201,17 @@ export default function ProductWheel() {
                 return (
                   <div
                     key={category.id}
-                    className={`absolute w-40 h-40 rounded-full shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 ${
+                    className={`absolute w-40 h-40 rounded-full shadow-lg cursor-pointer hover:scale-105 transition-all duration-300 ${
                       isActive ? 'ring-4 ring-white ring-opacity-80' : ''
-                    }`}
+                    } ${backgroundGlow && isActive ? 'animate-pulse' : ''}`}
                     style={{
                       backgroundColor: category.color,
                       left: `${position.x - 80 + 12 - 20 + 8}px`,
                       top: `${position.y - 80 + 8 - 10}px`,
-                      zIndex: 20
+                      zIndex: 20,
+                      boxShadow: backgroundGlow && isActive 
+                        ? `0 0 30px ${getCategoryColor(category.id)}80, 0 0 60px ${getCategoryColor(category.id)}40` 
+                        : '0 4px 15px rgba(0,0,0,0.1)'
                     }}
                     onClick={() => handleCategoryClick(index)}
                   >
@@ -212,7 +241,12 @@ export default function ProductWheel() {
 
           {/* Active Category Details */}
           <div className="w-full lg:w-[600px] lg:ml-8" style={{ marginLeft: '120px', marginTop: '-20px' }}>
-            <div className="space-y-6">
+            <div 
+              className="space-y-6 p-6 rounded-xl transition-all duration-1000"
+              style={{
+                backgroundColor: `${getCategoryColor(categories[activeCategory].id)}10`
+              }}
+            >
               {/* SEKCJA 1: Tytuł kategorii */}
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
@@ -229,7 +263,12 @@ export default function ProductWheel() {
                 </div>
                 
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold mb-2 text-gray-800">
+                  <h2 
+                    className="text-2xl font-bold mb-2 transition-colors duration-1000"
+                    style={{
+                      color: getCategoryColor(categories[activeCategory].id)
+                    }}
+                  >
                     {categories[activeCategory].name}
                   </h2>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -240,7 +279,12 @@ export default function ProductWheel() {
 
               {/* SEKCJA 3: Lista produktów z odnośnikami */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-800 mb-4 flex items-center">
+                <h4 
+                  className="text-sm font-semibold mb-4 flex items-center transition-colors duration-1000"
+                  style={{
+                    color: getCategoryColor(categories[activeCategory].id)
+                  }}
+                >
                   <span className="mr-2">📦</span>
                   Nasze produkty:
                 </h4>
@@ -249,17 +293,32 @@ export default function ProductWheel() {
                     <div 
                       key={index}
                       className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 transition-all duration-300 cursor-pointer border border-gray-200 bg-white"
+                      style={{
+                        borderColor: `${getCategoryColor(categories[activeCategory].id)}30`
+                      }}
                       onClick={() => {
                         // Przejście do strony produktu
                         const productSlug = product.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                         window.location.href = `/produkty/${productSlug}`;
                       }}
                     >
-                      <div className="w-6 h-6 rounded bg-gray-100 flex items-center justify-center text-xs">
+                      <div 
+                        className="w-6 h-6 rounded flex items-center justify-center text-xs text-white font-semibold"
+                        style={{
+                          backgroundColor: getCategoryColor(categories[activeCategory].id)
+                        }}
+                      >
                         {index + 1}
                       </div>
                       <span className="text-gray-700 text-xs font-medium flex-1 truncate">{product}</span>
-                      <div className="text-gray-400 text-xs">→</div>
+                      <div 
+                        className="text-xs transition-colors duration-1000"
+                        style={{
+                          color: getCategoryColor(categories[activeCategory].id)
+                        }}
+                      >
+                        →
+                      </div>
                     </div>
                   ))}
                 </div>
