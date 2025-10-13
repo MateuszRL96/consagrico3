@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface BlogPost {
   id: string;
@@ -22,7 +22,7 @@ export default function BlogPost() {
   const [copied, setCopied] = useState(false);
 
   // Przykładowe dane - później można pobrać z API/bazy danych
-  const posts: BlogPost[] = [
+  const posts: BlogPost[] = useMemo(() => [
     {
       id: '1',
       title: 'Innowacje w ochronie roślin - przyszłość rolnictwa',
@@ -91,7 +91,7 @@ export default function BlogPost() {
       category: 'Poradniki',
       readTime: '6 min'
     }
-  ];
+  ], []);
 
   useEffect(() => {
     const foundPost = posts.find(p => p.id === params.id);

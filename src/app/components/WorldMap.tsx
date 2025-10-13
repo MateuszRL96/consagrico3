@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const countries = [
   { code: 'GB', name: 'Wielka Brytania', flag: '🇬🇧', position: { top: '32%', left: '49%' } },
@@ -34,10 +35,11 @@ export default function WorldMap() {
       <div className="relative w-full bg-white overflow-hidden">
         {/* Map Image - full width */}
         <div className="relative w-full h-[600px]">
-          <img 
+          <Image 
             src="/obrazy/MapChart_Map (1).png" 
             alt="World Map"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           
           {/* Dark overlay for better text visibility */}
