@@ -96,7 +96,7 @@ export default function BlogPost() {
   useEffect(() => {
     const foundPost = posts.find(p => p.id === params.id);
     setPost(foundPost || null);
-  }, [params.id]);
+  }, [params.id, posts]);
 
   const shareOnLinkedIn = () => {
     const url = window.location.href;

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -160,7 +160,15 @@ export default async function ProductDetailPage({ params, searchParams }: Props)
   return <ProductDetailClient initialSize={resolvedSearchParams.size || '1l'} meta={meta} slug={resolvedParams.slug} />;
 }
 
-function ProductDetailClient({ initialSize, meta, slug }: { initialSize: string; meta: any; slug: string }) {
+type ProductMeta = {
+  title: string;
+  image: string;
+  image1L: string;
+  image5L: string;
+  image20L: string;
+};
+
+function ProductDetailClient({ initialSize, meta, slug }: { initialSize: string; meta: ProductMeta; slug: string }) {
   const [selectedSize, setSelectedSize] = useState(initialSize);
 
   const getCurrentImage = () => {

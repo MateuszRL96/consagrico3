@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const comparisons = [
   {
@@ -131,12 +132,12 @@ export default function BeforeAfterSlider() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/produkty"
             className="inline-block bg-gradient-to-r from-[#0066b3] to-[#2dbd6e] text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all"
           >
             Zobacz nasze produkty
-          </a>
+          </Link>
         </div>
       </div>
     </section>

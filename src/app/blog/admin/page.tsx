@@ -371,9 +371,9 @@ export default function BlogAdmin() {
           <h3 className="text-xl font-bold text-white mb-3">💡 Wskazówki</h3>
           <ul className="text-gray-300 space-y-2">
             <li>• Posty są przechowywane lokalnie w przeglądarce (localStorage)</li>
-            <li>• Użyj przycisku "Eksportuj JSON" aby zapisać kopię zapasową</li>
             <li>• Kliknij ikonę LinkedIn przy poście, aby udostępnić go na LinkedIn</li>
             <li>• W treści możesz używać HTML: &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;</li>
+            <li>• Użyj przycisku &quot;Eksportuj JSON&quot; aby zapisać kopię zapasową</li>
           </ul>
         </div>
       </div>
